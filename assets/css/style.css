@@ -45,7 +45,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 
 /* ---------- FV ---------- */
-.fv{background:linear-gradient(180deg,#f3efe6 0%,var(--bg) 100%); padding:26px 0 30px; border-bottom:1px solid var(--line);}
+.fv{
+  position:relative; isolation:isolate; overflow:hidden;
+  background:linear-gradient(180deg,#f3efe6 0%,var(--bg) 100%);
+  padding:26px 0 30px; border-bottom:1px solid var(--line);
+}
+.fv::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(243,239,230,.96) 0%,rgba(243,239,230,.82) 52%,rgba(251,249,245,.5) 100%),
+    url("../img/placeholders/fv-bg-placeholder.webp") center/cover no-repeat;
+}
 .fv h1{
   font-size:clamp(23px,6.4vw,40px); line-height:1.55; margin:0 0 10px;
   font-weight:600; letter-spacing:.01em;
@@ -88,6 +98,19 @@ h2{
 }
 h2 .n{display:block; font-size:11px; letter-spacing:.2em; color:var(--gold-text); font-family:"Hiragino Kaku Gothic ProN",sans-serif; margin-bottom:6px;}
 .sec-lead{color:var(--ink-2); font-size:15px; margin:0 0 22px;}
+.section-visual{
+  margin:0 0 20px; overflow:hidden; border-radius:var(--radius);
+  background:#eee9df; border:1px solid var(--line);
+  aspect-ratio:3/2;
+}
+.section-visual img{width:100%; height:100%; object-fit:cover;}
+.visual-layout{display:grid; gap:20px;}
+@media(min-width:768px){
+  .visual-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr); align-items:start;}
+  .visual-layout .section-visual{margin-bottom:0; position:sticky; top:92px;}
+}
+.section-visual--wide{max-height:360px;}
+.section-visual--faq{max-width:420px;}
 
 /* ---------- 緊急3ステップ ---------- */
 .steps{display:grid; gap:12px; margin:0; padding:0; list-style:none;}
@@ -192,6 +215,15 @@ details summary::before{content:"Q  "; color:var(--gold); font-family:"Hiragino 
 details p{font-size:14.5px; color:var(--ink-2); margin:12px 0 0; padding-top:12px; border-top:1px dashed var(--line);}
 
 /* ---------- フォーム ---------- */
+.contact-section{
+  position:relative; isolation:isolate; overflow:hidden;
+}
+.contact-section::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:
+    linear-gradient(rgba(251,249,245,.9),rgba(251,249,245,.95)),
+    url("../img/placeholders/cta-bg-placeholder.webp") center/cover no-repeat;
+}
 .form-wrap{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px 16px;}
 .form-wrap input,.form-wrap select,.form-wrap textarea{
   width:100%; font-size:16px; padding:12px; border:1px solid var(--line); border-radius:8px;
