@@ -17,6 +17,18 @@
 <!-- P1〜P8・禁止表現・公開前チェックはREADME.mdで管理 -->
 </head>
 <body>
+<svg class="svg-sprite" aria-hidden="true">
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M7.5 3.5 10 8 8.2 9.8a15 15 0 0 0 6 6L16 14l4.5 2.5v3a1 1 0 0 1-1 1C10.7 20.5 3.5 13.3 3.5 4.5a1 1 0 0 1 1-1h3Z"/></symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="icon-area" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="icon-price" viewBox="0 0 24 24"><path d="M5 7h14v12H5zM8 4h8v3M8 11h8M8 15h5"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+  <symbol id="icon-car" viewBox="0 0 24 24"><path d="m5 11 2-5h10l2 5 2 2v5h-3v-2H6v2H3v-5l2-2Z"/><circle cx="7" cy="13" r="1"/><circle cx="17" cy="13" r="1"/></symbol>
+  <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-7 9 7M5 10v10h14V10M9 20v-6h6v6"/></symbol>
+  <symbol id="icon-talk" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/></symbol>
+  <symbol id="icon-doc" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6zM14 3v4h4M9 11h6M9 15h6"/></symbol>
+  <symbol id="icon-flower" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M12 10c-3-1-4-4-2-6 2 0 3 2 2 6Zm2 2c1-3 4-4 6-2 0 2-2 3-6 2Zm-2 2c3 1 4 4 2 6-2 0-3-2-2-6Zm-2-2c-1 3-4 4-6 2 0-2 2-3 6-2Z"/></symbol>
+</svg>
 
 <header class="hd">
   <div class="hd-in">
@@ -32,30 +44,35 @@
 <!-- ============ FV ============ -->
 <section class="fv">
   <div class="wrap fv-grid">
-    <div>
+    <div class="fv-copy">
       <h1><span class="ph">火葬まで待つ日数で</span><span class="ph">増える分も、</span><span class="ph em">先にお伝えします。</span></h1>
       <p class="h1sub">川崎市・横浜市北部の葬儀相談窓口／24時間365日・年中無休</p>
       <p class="lead">火葬までお待ちいただく日数によって、ご葬儀の費用は変わります。当窓口は基本料金だけでなく、<strong>お待ちいただいた場合の総額の目安</strong>を最初にお出しします。深夜・早朝のご相談も承ります。</p>
-      <ul class="badges">
-        <li>24時間365日 受付</li>
-        <li>川崎・横浜北部に特化</li>
-        <li>総額の目安を先に提示</li>
-        <li>事前のご相談も無料</li>
-      </ul>
     </div>
-    <div>
+    <figure class="fv-visual">
+      <!-- 仮画像：本番用の家族葬ホール写真へ同名ファイルを差し替え -->
+      <img src="assets/img/placeholders/fv-hall-placeholder.webp" width="1200" height="900" fetchpriority="high" decoding="async" alt="木目と自然光を取り入れた落ち着いた家族葬ホールのイメージ">
+    </figure>
+    <div class="fv-actions">
       <a class="cta-tel" href="tel:0000000000" data-cta="tel">
+        <svg class="icon cta-icon" aria-hidden="true"><use href="#icon-phone"/></svg>
         <span class="k">お急ぎの方はお電話ください</span>
         <span class="num">0000&#8209;00&#8209;0000</span>
         <span class="n2">通話無料／24時間365日・年中無休</span>
       </a>
       <a class="cta-sub" href="#sodan" data-cta="sub">お急ぎでない方 ― 事前のご相談・資料請求</a>
+      <ul class="badges">
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>24時間365日 受付</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-area"/></svg>川崎・横浜北部に特化</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-price"/></svg>総額の目安を先に提示</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-talk"/></svg>事前のご相談も無料</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- ============ 緊急3ステップ ============ -->
-<section>
+<section class="urgent-section">
   <div class="wrap">
     <h2><span class="n">FOR URGENT</span>ご逝去された直後の方へ</h2>
     <p class="sec-lead">まずお電話ください。ご搬送とご安置の手配を先に進め、内容とお費用のご相談はそのあとで承ります。</p>
@@ -72,10 +89,18 @@
 </section>
 
 <!-- ============ 料金 ============ -->
-<section>
+<section class="price-section">
   <div class="wrap">
-    <h2><span class="n">PRICE</span>ご葬儀のかたちと基本料金</h2>
-    <p class="sec-lead">下記は基本料金です。実際のお費用は、<strong>火葬までお待ちいただく日数・搬送距離・火葬場の料金</strong>で変わります。次の項目でその総額の目安をご確認ください。</p>
+    <div class="section-intro-grid">
+      <div>
+        <h2><span class="n">PRICE</span>ご葬儀のかたちと基本料金</h2>
+        <p class="sec-lead">下記は基本料金です。実際のお費用は、<strong>火葬までお待ちいただく日数・搬送距離・火葬場の料金</strong>で変わります。次の項目でその総額の目安をご確認ください。</p>
+      </div>
+      <figure class="section-visual section-visual--intro">
+        <!-- 仮画像：本番用の花祭壇写真へ同名ファイルを差し替え -->
+        <img src="assets/img/placeholders/flower-altar-placeholder.webp" width="960" height="640" loading="lazy" decoding="async" alt="白と淡い緑の花で整えた家族葬の花祭壇イメージ">
+      </figure>
+    </div>
 
     <div class="plans">
       <div class="plan">
@@ -137,7 +162,7 @@
 </section>
 
 <!-- ============ シミュレーター ============ -->
-<section id="sim">
+<section id="sim" class="sim-section">
   <div class="wrap">
     <h2><span class="n">SIMULATION</span>火葬までお待ちいただく日数を含めた、総額の目安</h2>
     <p class="sec-lead">川崎市・横浜市では、火葬場の混み具合により<strong>数日お待ちいただくことがあります</strong>。その間のご安置とドライアイスは1日ごとに費用が発生します。ここを先にご確認ください。</p>
@@ -146,43 +171,48 @@
       <h3>総額の目安をその場で計算</h3>
       <p class="sim-lead">ご葬儀のかたちと、お待ちいただく日数をお選びください。</p>
 
-      <div class="field">
-        <div class="field-label" id="planLabel">1. ご葬儀のかたち</div>
-        <div class="seg sans" id="segPlan" role="group" aria-labelledby="planLabel">
-          <button type="button" data-plan="kasou" aria-pressed="true">火葬式</button>
-          <button type="button" data-plan="ichinichi" aria-pressed="false">一日葬</button>
-          <button type="button" data-plan="kazoku" aria-pressed="false">家族葬</button>
+      <div class="sim-layout">
+        <div class="sim-inputs">
+          <div class="field">
+            <div class="field-label" id="planLabel">1. ご葬儀のかたち</div>
+            <div class="seg sans" id="segPlan" role="group" aria-labelledby="planLabel">
+              <button type="button" data-plan="kasou" aria-pressed="true">火葬式</button>
+              <button type="button" data-plan="ichinichi" aria-pressed="false">一日葬</button>
+              <button type="button" data-plan="kazoku" aria-pressed="false">家族葬</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="days">2. 火葬までお待ちいただく日数 ― <span class="days-out" id="daysOut">4日</span></label>
+            <input type="range" id="days" min="0" max="8" step="1" value="4" aria-label="火葬までお待ちいただく日数">
+            <p class="disclaim disclaim--compact">※お待ちいただく日数は時期により変動します。横浜市内では平均で4日半ほどお待ちいただく実績があります（当窓口調べ）。</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label" id="cityLabel">3. 火葬場のご利用区分</div>
+            <div class="seg sans" id="segCity" role="group" aria-labelledby="cityLabel">
+              <button type="button" data-city="kawasaki" aria-pressed="true">川崎市民</button>
+              <button type="button" data-city="yokohama" aria-pressed="false">横浜市民</button>
+              <button type="button" data-city="other" aria-pressed="false">市外の方</button>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="sim-output">
+          <div class="sim-result" aria-live="polite">
+            <span class="lb">総額の目安（税込）</span>
+            <span class="val" id="simTotal">約 21〜25万円</span>
+          </div>
 
-      <div class="field">
-        <label for="days">2. 火葬までお待ちいただく日数 ― <span class="days-out" id="daysOut">4日</span></label>
-        <input type="range" id="days" min="0" max="8" step="1" value="4" aria-label="火葬までお待ちいただく日数">
-        <p class="disclaim disclaim--compact">※お待ちいただく日数は時期により変動します。横浜市内では平均で4日半ほどお待ちいただく実績があります（当窓口調べ）。</p>
-      </div>
-
-      <div class="field">
-        <div class="field-label" id="cityLabel">3. 火葬場のご利用区分</div>
-        <div class="seg sans" id="segCity" role="group" aria-labelledby="cityLabel">
-          <button type="button" data-city="kawasaki" aria-pressed="true">川崎市民</button>
-          <button type="button" data-city="yokohama" aria-pressed="false">横浜市民</button>
-          <button type="button" data-city="other" aria-pressed="false">市外の方</button>
+          <div class="sim-brk">
+            <table>
+              <tbody>
+                <tr><th>基本料金</th><td id="brkBase">165,000円</td></tr>
+                <tr><th>ご安置・ドライアイスの延長（<span id="brkDays">3</span>日分）</th><td id="brkStay">60,000円</td></tr>
+                <tr><th>火葬場の使用料・火葬料</th><td id="brkCity">0円</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-
-      <div class="sim-result" aria-live="polite">
-        <span class="lb">総額の目安（税込）</span>
-        <span class="val" id="simTotal">約 21〜25万円</span>
-      </div>
-
-      <div class="sim-brk">
-        <table>
-          <tbody>
-            <tr><th>基本料金</th><td id="brkBase">165,000円</td></tr>
-            <tr><th>ご安置・ドライアイスの延長（<span id="brkDays">3</span>日分）</th><td id="brkStay">60,000円</td></tr>
-            <tr><th>火葬場の使用料・火葬料</th><td id="brkCity">0円</td></tr>
-          </tbody>
-        </table>
       </div>
 
       <p class="disclaim">
@@ -190,6 +220,7 @@
         ※お花・お食事・返礼品・宗教者への謝礼は上記に含まれません。
       </p>
       <a class="cta-tel cta-tel--spaced sans" href="tel:0000000000" data-cta="tel">
+        <svg class="icon cta-icon" aria-hidden="true"><use href="#icon-phone"/></svg>
         <span class="k">この内容で正式なお見積りを聞く</span>
         <span class="num">0000&#8209;00&#8209;0000</span>
         <span class="n2">通話無料／24時間365日</span>
@@ -208,16 +239,16 @@
         <img src="assets/img/placeholders/consultation-placeholder.webp" width="960" height="640" loading="lazy" decoding="async" alt="落ち着いた室内で葬儀について相談する様子">
       </figure>
       <ul class="reasons">
-        <li><b>増える分を、先に出す</b><span>お待ちいただく日数で費用が動くことを、ご依頼の前にお伝えします。あとから知らされることのないように。</span></li>
-        <li><b>川崎・横浜北部に絞る</b><span>この地域の火葬場・式場の空き状況と、実際にかかる日数を把握しています。全国対応の窓口とは異なります。</span></li>
-        <li><b>深夜・早朝に人が出る</b><span>ご逝去は時間を選びません。24時間365日、折り返しではなくその場でお話をうかがいます。</span></li>
+        <li><svg class="icon reason-icon" aria-hidden="true"><use href="#icon-price"/></svg><b>増える分を、先に出す</b><span>お待ちいただく日数で費用が動くことを、ご依頼の前にお伝えします。あとから知らされることのないように。</span></li>
+        <li><svg class="icon reason-icon" aria-hidden="true"><use href="#icon-area"/></svg><b>川崎・横浜北部に絞る</b><span>この地域の火葬場・式場の空き状況と、実際にかかる日数を把握しています。全国対応の窓口とは異なります。</span></li>
+        <li><svg class="icon reason-icon" aria-hidden="true"><use href="#icon-clock"/></svg><b>深夜・早朝に人が出る</b><span>ご逝去は時間を選びません。24時間365日、折り返しではなくその場でお話をうかがいます。</span></li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- ============ 提携斎場 ============ -->
-<section>
+<section class="hall-section">
   <div class="wrap">
     <h2><span class="n">HALL</span>ご案内できる主な斎場・火葬場</h2>
     <p class="sec-lead">ご希望の場所・ご参列の人数・お待ちいただく日数に応じてご提案します。<!-- ★P3: 6件を確定情報に差し替え --></p>
@@ -233,32 +264,38 @@
       <li><b>提携斎場（5）</b><div class="meta">※True Heart提携先リスト受領後に掲載</div></li>
       <li><b>提携斎場（6）</b><div class="meta">※True Heart提携先リスト受領後に掲載</div></li>
     </ul>
+    <a class="cta-tel cta-tel--section sans" href="tel:0000000000" data-cta="tel">
+      <svg class="icon cta-icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+      <span class="k">お急ぎの方はお電話ください</span>
+      <span class="num">0000&#8209;00&#8209;0000</span>
+      <span class="n2">通話無料／24時間365日・年中無休</span>
+    </a>
   </div>
 </section>
 
 <!-- ============ 流れ ============ -->
-<section>
+<section class="flow-section">
   <div class="wrap">
     <h2><span class="n">FLOW</span>ご逝去から お見送りまでの流れ</h2>
     <div class="visual-layout">
       <figure class="section-visual">
         <!-- 仮画像：本番素材へ assets/img/placeholders/ 内の同名ファイルを差し替え -->
-        <img src="assets/img/placeholders/flow-placeholder.webp" width="960" height="640" loading="lazy" decoding="async" alt="白い花と明るい式場通路のイメージ">
+        <img src="assets/img/placeholders/resting-room-placeholder.webp" width="960" height="640" loading="lazy" decoding="async" alt="木目と自然光を取り入れた清潔感のある安置室イメージ">
       </figure>
       <ul class="flow">
-        <li><b>ご連絡・お迎え</b><span>お電話をいただき次第、寝台車でお迎えにあがります。</span></li>
-        <li><b>ご安置</b><span>安置施設またはご自宅へご搬送し、ドライアイスの処置を行います。</span></li>
-        <li><b>お打ち合わせ</b><span>ご葬儀のかたち・日程・火葬場の空き状況・お見積りを確定します。</span></li>
-        <li><b>お手続き</b><span>死亡届・火葬許可の申請を代行します。</span></li>
-        <li><b>ご葬儀・火葬</b><span>ご希望の内容でお見送りいただきます。</span></li>
-        <li><b>ご葬儀のあと</b><span>ご遺骨のお引き取り、納骨・法要のご相談も承ります。</span></li>
+        <li><svg class="icon flow-icon" aria-hidden="true"><use href="#icon-phone"/></svg><b>ご連絡・お迎え</b><span>お電話をいただき次第、寝台車でお迎えにあがります。</span></li>
+        <li><svg class="icon flow-icon" aria-hidden="true"><use href="#icon-home"/></svg><b>ご安置</b><span>安置施設またはご自宅へご搬送し、ドライアイスの処置を行います。</span></li>
+        <li><svg class="icon flow-icon" aria-hidden="true"><use href="#icon-talk"/></svg><b>お打ち合わせ</b><span>ご葬儀のかたち・日程・火葬場の空き状況・お見積りを確定します。</span></li>
+        <li><svg class="icon flow-icon" aria-hidden="true"><use href="#icon-doc"/></svg><b>お手続き</b><span>死亡届・火葬許可の申請を代行します。</span></li>
+        <li><svg class="icon flow-icon" aria-hidden="true"><use href="#icon-flower"/></svg><b>ご葬儀・火葬</b><span>ご希望の内容でお見送りいただきます。</span></li>
+        <li><svg class="icon flow-icon" aria-hidden="true"><use href="#icon-check"/></svg><b>ご葬儀のあと</b><span>ご遺骨のお引き取り、納骨・法要のご相談も承ります。</span></li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
-<section>
+<section class="faq-section">
   <div class="wrap">
     <h2><span class="n">FAQ</span>よくいただくご質問</h2>
     <figure class="section-visual section-visual--faq">
@@ -279,7 +316,12 @@
   <div class="wrap">
     <h2><span class="n">CONTACT</span>事前のご相談・資料のご請求</h2>
     <p class="sec-lead">お急ぎでない方は、フォームからもご相談を承ります（無料）。1〜2営業日以内にご連絡します。<strong>お急ぎの場合はお電話ください。</strong></p>
-    <div class="form-wrap">
+    <div class="contact-grid">
+      <figure class="section-visual contact-visual">
+        <!-- 仮画像：本番用の相談スタッフ写真へ同名ファイルを差し替え -->
+        <img src="assets/img/placeholders/phone-staff-placeholder.webp" width="960" height="640" loading="lazy" decoding="async" alt="電話で相談を受けるスタッフのイメージ">
+      </figure>
+      <div class="form-wrap">
       <!-- ★P7: action を送信先に差し替え -->
       <form action="#" method="post" id="contactForm">
         <div class="field"><label for="contactName">お名前 <span class="req">必須</span></label><input id="contactName" type="text" name="name" required autocomplete="name"></div>
@@ -304,6 +346,7 @@
         <button class="btn-submit" type="submit" data-cta="form">送信する（無料）</button>
         <p class="privacy">ご入力いただいた情報は、ご相談への回答・資料の送付にのみ使用し、それ以外の目的では利用しません。しつこい営業のご連絡はいたしません。</p>
       </form>
+      </div>
     </div>
   </div>
 </section>
