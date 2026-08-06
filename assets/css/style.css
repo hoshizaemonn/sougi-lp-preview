@@ -134,43 +134,9 @@ h2 .n{display:block; font-size:11px; letter-spacing:.2em; color:var(--gold-text)
 /* ---------- 料金 ---------- */
 .plans{display:grid; gap:14px;}
 .plan{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+.plan-photo{margin:0;}
+.plan-photo img{display:block; width:100%; height:172px; object-fit:cover;}
 .plan-hd{background:#f4f1ea; padding:13px 16px; border-bottom:1px solid var(--line);}
-
-/* ===== プレミアム料金カード（火葬式/1日葬/2日葬） ===== */
-.pcards{display:grid; grid-template-columns:1fr; gap:18px; margin-top:4px;}
-.pcard{--pc:#bd6a63; --pcl:#cc7d75; --pcd:#a5544d;
-  display:flex; flex-direction:column; background:#fff;
-  border:2px solid var(--pc); border-radius:20px; overflow:hidden;
-  box-shadow:0 12px 30px rgba(64,52,35,.10);}
-.pcard--kaso{--pc:#bd6a63; --pcl:#cf827b; --pcd:#a5544d;}
-.pcard--ichinichi{--pc:#6a90bd; --pcl:#88a8cf; --pcd:#4f79ab;}
-.pcard--futsuka{--pc:#6f6ea3; --pcl:#8b8abb; --pcd:#585790;}
-.pcard-head{background:linear-gradient(135deg,var(--pcl),var(--pc)); padding:20px 16px 18px; text-align:center;}
-.pcard-badge{display:inline-block; background:rgba(255,255,255,.94); color:var(--pcd);
-  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; font-size:12px; font-weight:700;
-  padding:5px 14px; border-radius:999px; margin-bottom:9px; line-height:1.4;}
-.pcard-name{margin:0; color:#fff; font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-  font-size:26px; letter-spacing:.1em; text-shadow:0 1px 3px rgba(0,0,0,.14);}
-.pcard-fig{position:relative; margin:0;}
-.pcard-fig img{display:block; width:100%; height:196px; object-fit:cover;}
-.pcard-fig figcaption{position:absolute; left:0; right:0; bottom:0; padding:24px 14px 11px;
-  background:linear-gradient(rgba(0,0,0,0), color-mix(in srgb, var(--pc) 82%, transparent));
-  color:#fff; font-size:13.5px; font-weight:600; text-align:center;
-  text-shadow:0 1px 2px rgba(0,0,0,.25);}
-.pcard-body{display:flex; flex-direction:column; flex:1; padding:18px 16px 20px;}
-.pcard-price{text-align:center; line-height:1; margin:0 0 14px; color:var(--pcd);
-  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;}
-.pcard-price .tax{font-size:14px; font-weight:700; margin-right:5px; vertical-align:0.35em;
-  writing-mode:vertical-rl; text-orientation:upright; display:inline-block; letter-spacing:-.05em;}
-.pcard-price .amt{font-size:clamp(34px,8vw,42px); font-weight:800; letter-spacing:-.01em;}
-.pcard-price .unit{font-size:16px; font-weight:700; margin-left:3px;}
-.pcard-flow{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; list-style:none; padding:0; margin:0 0 13px;}
-.pcard-flow li{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; font-size:12.5px; font-weight:700;
-  color:#fff; background:var(--pc); padding:5px 9px; border-radius:7px;}
-.pcard-flow li.off{background:#d7d3cc;}
-.pcard-note{margin:auto 0 0; font-size:11.5px; line-height:1.75; color:var(--sub);}
-.pcard-note b{color:var(--ink); font-weight:700;}
-@media(min-width:760px){.pcards{grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch;}}
 .plan-hd b{font-size:18px;}
 .plan-hd span{display:block; font-size:12px; color:var(--sub);}
 .plan-bd{padding:16px;}
