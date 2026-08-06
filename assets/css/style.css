@@ -216,8 +216,8 @@ details summary::-webkit-details-marker{display:none;}
 details summary::before{content:"Q  "; color:var(--gold); font-family:"Hiragino Kaku Gothic ProN",sans-serif;}
 details p{font-size:14.5px; color:var(--ink-2); margin:12px 0 0; padding-top:12px; border-top:1px dashed var(--line);}
 
-/* ---------- 事前相談メッセージ ---------- */
-.premsg-section{text-align:center; background:linear-gradient(180deg,#f3efe6,var(--bg));}
+/* ---------- 事前相談メッセージ（事前のご相談セクション内） ---------- */
+.premsg{text-align:center; margin:0 0 30px; padding:0 0 28px; border-bottom:1px solid var(--line);}
 .premsg-over{display:inline-block; font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
   font-size:clamp(13px,3.4vw,15px); color:var(--ink-2); letter-spacing:.04em;
   border-bottom:1px solid var(--gold); padding:0 8px 7px; margin:0 0 20px;}
