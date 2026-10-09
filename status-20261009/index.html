@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>図解：Google広告10/15配信 準備状況（家族葬の光）</title>
 <style>
   :root{
@@ -20,20 +21,25 @@
   h2 small{font-size:12px; color:var(--sub); font-weight:normal; margin-left:10px;}
   .card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 20px;}
   .grid{display:grid; gap:12px;}
-  .g2{grid-template-columns:repeat(2,1fr);} .g4{grid-template-columns:repeat(4,1fr);}
-  @media(max-width:760px){.g2,.g4{grid-template-columns:1fr;}}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  @media(max-width:760px){.g2{grid-template-columns:1fr;}}
   table{width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; font-size:13px;}
   th{background:var(--navy); color:#fff; padding:9px 10px; text-align:left; font-weight:600;}
   td{padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top;}
   tr:last-child td{border-bottom:none;}
-  .ok{color:var(--green); font-weight:bold;} .ng{color:var(--red); font-weight:bold;} .warn{color:var(--amber); font-weight:bold;}
   .pill{display:inline-block; border-radius:999px; padding:1px 10px; font-size:11px; font-weight:bold; color:#fff;}
-  .p-red{background:var(--red);} .p-amber{background:var(--amber);} .p-green{background:var(--green);}
+  .p-red{background:var(--red);} .p-amber{background:var(--amber);} .p-green{background:var(--green);} .p-blue{background:var(--blue);}
   .note{font-size:12px; color:var(--sub); margin-top:8px;}
   .conclusion{border-left:5px solid var(--red); background:#fff; border-radius:0 12px 12px 0; padding:16px 20px;}
   .conclusion b{color:var(--red);}
   .decided{border-left:5px solid var(--green); background:#fff; border-radius:0 12px 12px 0; padding:14px 18px; margin-bottom:10px;}
   .decided b{color:var(--green);}
+  .decided.pending{border-left-color:var(--amber);} .decided.pending b{color:var(--amber);}
+  .opt{background:#fff; border:2px solid var(--line); border-radius:12px; padding:14px 16px;}
+  .opt.chosen{border-color:var(--green);}
+  .opt h4{font-size:14px; margin-bottom:6px;}
+  .opt ul{padding-left:18px; font-size:12.5px;}
+  .shot{width:100%; height:auto; border:1px solid var(--line); border-radius:10px; display:block;}
   .lp-frame{width:100%; height:560px; border:1px solid var(--line); border-radius:12px; background:#fff;}
   .lp-link{display:inline-block; margin-top:10px; font-size:13px; color:var(--blue); font-weight:bold;}
   footer{margin-top:48px; font-size:11px; color:var(--sub); text-align:center;}
@@ -44,39 +50,74 @@
 
 <header>
   <div class="tag">RUNBIRD 葬儀事業 ／ Google広告 10/15 0:00配信 準備状況 ／ 2026-10-09</div>
-  <h1>Google広告 配信準備 現状整理<br><span style="font-size:15px; opacity:.9;">「家族葬の光」— 過去資料の照合＋今回の方針決定</span></h1>
-  <p>7/25〜9/10の過去資料を照合し、矛盾点を洗い出した上で方針を決定。残る課題（ドメイン）を鈴木さんに確認中。</p>
+  <h1>Google広告 配信準備 現状整理<br><span style="font-size:15px; opacity:.9;">「家族葬の光」— 過去資料の照合＋今回の方針</span></h1>
+  <p>7/25〜9/10の過去資料を照合して矛盾点を洗い出し、方針を決めた。鈴木さんに確認したいのは「ドメイン」「広告アカウント」「夜間の受け手」の3点。</p>
 </header>
 
 <h2>① 結論</h2>
 <div class="conclusion">
-  <p><b>地域・電話番号・最終URLの方針は決定。残るはドメイン取得と電話代行の結論待ち。</b></p>
-  <p class="note">ドメインが無いと本番公開ができず、Google広告の審査自体が通らない（仮URLでは審査不可の設計）。</p>
+  <p><b>地域・電話番号・最終URL・電話代行の方針は決定（案）。配信開始の前に、鈴木さんの確認が必要なのは3点。</b></p>
+  <p class="note">特にドメインが無いと本番公開ができず、Google広告の審査自体が通らない（仮URLでは審査不可の設計）。</p>
 </div>
 
-<h2>② 今回決定した3点</h2>
+<h2>② 方針（星崎さん案）</h2>
 <div class="decided"><b>配信地域</b> → LPの対応エリア表記に合わせ「東京都・川崎市・横浜市全域」に設定</div>
 <div class="decided"><b>電話番号</b> → 発番済みの 0120-264-167 をそのまま広告の通話アセットに使用（IVRy等は挟まない）</div>
 <div class="decided"><b>最終URL</b> → 現行のLPをそのまま本番環境にアップして使用</div>
+<div class="decided pending"><b>電話代行</b> → 月86,000円の有人代行は契約しない。0120-264-167の着信を直接転送して自前で受ける（7/25設計どおりの検証期方針）<span class="pill p-amber" style="margin-left:6px;">鈴木さん確認待ち</span></div>
 
-<h2>③ 残っている課題（鈴木さんへ確認中）<small>ここが埋まらないと配信開始できない</small></h2>
+<h2>③ 鈴木さんに確認したいこと<small>ここが埋まらないと配信開始できない</small></h2>
 <table>
-  <tr><th>課題</th><th>状況</th><th>必要なアクション</th></tr>
-  <tr><td>ドメイン</td><td><span class="pill p-red">未取得</span></td><td>取得をお願いしたい（候補「家族葬の光」系）</td></tr>
-  <tr><td>電話代行（24h・86,000円/月）</td><td><span class="pill p-amber">未決</span></td><td>契約する／しないの結論</td></tr>
+  <tr><th>確認事項</th><th>状況</th><th>内容</th></tr>
+  <tr><td>ドメイン</td><td><span class="pill p-red">未取得</span></td><td>取得をお願いしたい（候補「家族葬の光」系）。取得後に本番環境へアップ</td></tr>
+  <tr><td>Google広告アカウント</td><td><span class="pill p-amber">要確認</span></td><td>葬儀の広告を紐付けるのは、下の画面のランバード既存アカウントで合っているか（⑤参照）</td></tr>
+  <tr><td>夜間・早朝の受け手</td><td><span class="pill p-amber">要確認</span></td><td>電話代行を使わない場合、深夜の着信は誰が受けるか（設計時の想定はTrue Heartへの転送）。着信ログ・録音が取れるかも確認（撤退判断の根拠になるため）</td></tr>
 </table>
 
-<h2>④ 現在のLP（この内容をそのまま本番に上げる想定）</h2>
+<h2>④ 電話代行とは<small>外部の電話対応専門業者に委託するサービス</small></h2>
+<div class="grid g2">
+  <div class="opt">
+    <h4>A. 有人の電話代行を契約する</h4>
+    <ul>
+      <li>24時間365日、外部のオペレーターが電話を受ける（候補: セントラル・アイ等の葬儀向け業者）</li>
+      <li>月86,000円（50件まで・超過は追加）</li>
+      <li>広告費10万と合わせて固定費 月18.6万円</li>
+    </ul>
+  </div>
+  <div class="opt chosen">
+    <h4>B. 契約せず自前で受ける <span class="pill p-green">方針案</span></h4>
+    <ul>
+      <li>0120-264-167の着信を直接転送して受ける</li>
+      <li>追加の固定費なし（検証期は件数が少ない想定）</li>
+      <li>夜間の受け手と着信ログ取得の確認が必要（③参照）</li>
+    </ul>
+  </div>
+</div>
+
+<h2>⑤ Google広告に紐付けるアカウント<small>これで合っていますか？</small></h2>
+<div class="card">
+  <img class="shot" src="ads-account-masked.jpg" alt="Google広告のキャンペーン一覧画面（株式会社ランバード・アカウント）" loading="lazy">
+  <p class="note">画面: Google広告 &gt; キャンペーン一覧（アカウント名: 株式会社ランバード／アカウントID・メール・予算は伏せています。正本: 実行指示書_星崎さん_20260725）</p>
+  <table style="margin-top:12px;">
+    <tr><th>見てほしい点</th><th>現状</th></tr>
+    <tr><td>アカウント</td><td>7/25の設計どおり、ランバード既存アカウントに相乗りして葬儀用キャンペーン（葬儀_家族葬光_検証）を新規作成する</td></tr>
+    <tr><td>今ある内容</td><td>福祉・介護系のキャンペーンが1本（一時停止中）のみ。葬儀用はまだ未作成</td></tr>
+    <tr><td>福祉への影響</td><td>コンバージョンはキャンペーン単位で設定し、福祉側の自動入札の学習に影響しないようにする</td></tr>
+    <tr><td>請求</td><td>既存アカウントの請求設定をそのまま流用</td></tr>
+  </table>
+</div>
+
+<h2>⑥ 現在のLP（この内容をそのまま本番に上げる想定）</h2>
 <div class="card">
   <iframe class="lp-frame" src="https://hoshizaemonn.github.io/sougi-lp-preview/" title="家族葬の光 LPプレビュー" loading="lazy"></iframe>
   <a class="lp-link" href="https://hoshizaemonn.github.io/sougi-lp-preview/" target="_blank" rel="noopener">→ 別タブで開く：hoshizaemonn.github.io/sougi-lp-preview/</a>
   <p class="note">対応エリア拡大・横浜市営斎場5件（住所/TEL/FAX付き）・電話番号0120-264-167、反映済み。noindex・ドメイン未取得のプレビュー状態。</p>
 </div>
 
-<h2>⑤ 次のアクション</h2>
+<h2>⑦ 次のアクション</h2>
 <table>
   <tr><th>順番</th><th>内容</th><th>担当</th></tr>
-  <tr><td>1</td><td>ドメイン取得・電話代行の結論</td><td>鈴木さん</td></tr>
+  <tr><td>1</td><td>ドメイン取得／広告アカウント・夜間の受け手の確認</td><td>鈴木さん</td></tr>
   <tr><td>2</td><td>本番環境へのLPアップ・ドメイン設定</td><td>取得後に対応</td></tr>
   <tr><td>3</td><td>一時停止状態でキャンペーンを組む（確定済み設定を投入）</td><td>星崎さん</td></tr>
   <tr><td>4</td><td>配信ON</td><td>鈴木さん明示承認後</td></tr>
