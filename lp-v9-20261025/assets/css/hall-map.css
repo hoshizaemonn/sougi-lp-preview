@@ -1,0 +1,133 @@
+/* Scoped to block 3. Existing design tokens and other sections are unchanged. */
+#halls .hall-layout{display:block}
+#halls .hall-layout>.map-panel{position:static;margin-bottom:26px}
+#halls .map-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px}
+#halls .map-toolbar p{font-size:13px;margin:0;color:var(--sub)}
+#halls #map-interact{min-height:44px;padding:10px 14px;flex-shrink:0;border:1px solid var(--accent);border-radius:8px;background:white;color:var(--accent);font:inherit;font-size:14px;cursor:pointer}
+#halls #map-interact[aria-pressed=true]{background:var(--accent);color:white}
+#halls #hall-map{height:520px;width:100%;border:1px solid #a7c2aa;border-radius:8px;background:#fbf8f1;z-index:0;font-family:inherit}
+#halls #map-status:empty{display:none}
+#halls .map-legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin:14px 0 6px;font-size:13px}
+#halls .map-legend span{display:flex;align-items:center;gap:8px}
+#halls .map-legend i{display:inline-block;width:16px;height:16px;border:1px solid white;border-radius:50%;outline:1px solid #707b80;flex-shrink:0}
+#halls .key-crematorium{background:#20843e}#halls .key-hall{background:#775b85}
+#halls .hall-marker{background:transparent;border:0;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:14px}
+#halls .hall-marker:before{content:"";position:absolute;width:29px;height:29px;top:5px;left:7px;transform:rotate(-45deg);border-radius:50% 50% 50% 2px;background:#20843e;border:2px solid white;box-shadow:0 1px 3px #0005}
+#halls .hall-marker.hall-only:before{background:#775b85}
+#halls .hall-marker span{position:relative;top:-2px}
+#halls .hall-marker:focus-visible{outline:3px solid #111;outline-offset:2px}
+#halls .leaflet-control-zoom a{width:44px;height:44px;line-height:44px;color:#20843e}
+#halls .leaflet-control-attribution{background:#fffffff2;line-height:1.4;font-size:11px}
+#halls .leaflet-control-attribution a{display:inline-flex;min-height:44px;align-items:center;color:#20843e}
+#halls .leaflet-popup-content-wrapper{border-radius:8px;border:1px solid #a7c2aa;box-shadow:0 2px 8px #0002}
+#halls .leaflet-popup-content{margin:38px 16px 16px;font-size:13px;line-height:1.7}
+#halls .hall-popup h3{font-size:17px;margin:0 0 8px;line-height:1.5}
+#halls .hall-popup p{margin:8px 0}
+#halls .hall-popup .badge{white-space:normal;font-size:12px}
+#halls .leaflet-container a.leaflet-popup-close-button{width:44px;height:44px;line-height:44px;font-size:25px;color:#20843e}
+#halls .gmaps-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 12px;border:1px solid #20843e;border-radius:8px;background:white;color:#20843e;text-decoration:none;font-size:13px;margin-top:8px}
+#halls .hall-list{grid-template-columns:1fr 1fr;column-gap:32px}
+#halls #hall-count{grid-column:1/-1}
+#halls .hall-card{min-width:0}
+@media (pointer:coarse),(max-width:767px){
+ #halls #hall-map:not(.map-unlocked){touch-action:pan-y pinch-zoom;cursor:default}
+ #halls #hall-map.map-unlocked{touch-action:none}
+}
+@media(max-width:767px){
+ #halls #hall-map{height:470px}
+ #halls .hall-list{grid-template-columns:1fr}
+ #halls .map-toolbar{align-items:flex-start;flex-direction:column;gap:8px}
+ #halls .map-toolbar p{font-size:12px}
+ #halls .map-legend{font-size:12px;gap:10px}
+}
+
+#halls #hall-map.has-popup .leaflet-control-zoom{visibility:hidden}
+#halls .leaflet-popup-close-button{z-index:1}
+
+#halls .filters{display:flex;gap:8px;margin:24px 0 18px}#halls .filters button{min-height:48px;padding:10px 24px;border:1px solid var(--accent);border-radius:8px;background:white;color:var(--accent-dark);font-weight:700}#halls .filters [aria-pressed=true]{background:var(--accent);color:white}#halls .hall-list{display:grid;gap:16px 24px}#halls .hall-card{border:1px solid var(--line);border-radius:10px;padding:22px;background:white}#halls .hall-top{display:flex;gap:14px}#halls .hall-number{font:800 24px Arial;color:var(--accent);padding-top:6px}#halls .hall-top h3{font-size:20px;margin-bottom:4px}#halls .hall-top p{font-size:13px;margin-bottom:8px}#halls .badge{display:inline-block;border:1px solid var(--accent);border-radius:4px;color:var(--accent-dark);padding:3px 8px;font-size:11px}#halls .detail-button{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:44px;margin-top:16px;border:0;border-top:1px solid var(--line);padding:12px 0 0;background:white;color:var(--accent-dark);font-size:14px;font-weight:700}#halls .hall-detail{font-size:13px;margin-top:14px;border-top:1px solid var(--line);padding-top:14px}#halls .hall-detail dl{margin:0}#halls dt{font-weight:700;color:var(--accent-dark)}#halls dd{margin:0 0 12px}#halls #hall-count{margin-bottom:0;font-size:13px}#halls .hall-layout{margin-bottom:24px}@media(max-width:767px){#halls .filters button{flex:1;padding:10px 4px;font-size:14px}#halls .hall-card{padding:18px}#halls .hall-top h3{font-size:19px}#halls .map-legend{line-height:1.8}}
+/* v9 — all rules remain scoped to the venue block. */
+#halls>.wrap{width:min(1160px,calc(100% - 40px));padding:32px;background:#fff}
+#halls .sec-lead{margin-bottom:20px}
+#halls .filters{justify-content:center;margin:22px 0 16px}
+#halls .filters button{min-width:140px;min-height:52px;font-size:17px}
+#halls .map-legend{justify-content:center;margin:0 0 22px;font-size:13px}
+#halls .key-crematorium{background:#1d5b4b}#halls .key-hall{background:#a9884f}
+#halls .key-approximate{border:2px dashed #745c31;outline:none;background:#f2ede4}
+#halls .hall-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:26px;align-items:start}
+#halls .hall-layout>.map-panel{margin:0;min-width:0}
+#halls .map-toolbar{min-height:34px;align-items:center;margin-bottom:10px}
+#halls .map-toolbar p{font-size:12px}
+#halls .venue-map-frame{position:relative}
+#halls #hall-map{height:520px;background:#eaf2ee;border:1px solid #1d5b4b;border-radius:10px;font-size:15px}
+#halls .map-footnote{font-size:11px;color:#6e675e;margin-top:10px}
+#halls .venue-list-panel{min-width:0}
+#halls #hall-count{height:34px;display:flex;align-items:center;margin-bottom:10px;font-weight:700;color:#1d5b4b}
+#halls .hall-list{display:flex;flex-direction:column;gap:18px;height:520px;overflow-y:auto;overflow-x:hidden;padding:3px 10px 12px 3px;overscroll-behavior:contain;scrollbar-color:#a9884f #f2ede4;scrollbar-width:thin}
+#halls .hall-card{padding:0!important;flex:0 0 auto;border:1px solid #ded8cc;border-radius:10px;overflow:hidden;box-shadow:0 2px 5px #1830290d;cursor:pointer;transition:border-color .15s,box-shadow .15s}
+#halls .hall-card.is-selected{border-color:#1d5b4b;box-shadow:0 0 0 2px #a9884f}
+#halls .hall-card:focus-visible{outline:3px solid #a9884f;outline-offset:-3px}
+#halls .venue-art{height:160px;background:#eaf2ee;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#1d5b4b;gap:2px}
+#halls .venue-art svg{width:110px;height:70px;opacity:.7}
+#halls .venue-art>span:not(.venue-number){font-weight:700;font-size:15px}
+#halls .venue-art small{font-size:10px;color:#6e675e}
+#halls .venue-number{position:absolute;top:12px;left:12px;width:34px;height:34px;border-radius:50%;background:#1d5b4b;color:white;text-align:center;font:700 19px/34px Arial}
+#halls .venue-body{padding:18px 20px 0}
+#halls .hall-top{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:77px;border-bottom:1px dashed #a9884f;padding-bottom:12px}
+#halls .hall-top h3{font-size:20px;margin:0;line-height:1.5}
+#halls .badge{color:#1d5b4b;background:#eaf2ee;border-color:#1d5b4b;font-size:11px;line-height:1.5}
+#halls .badge.venue-hall-only{background:#f2ede4;color:#745c31;border-color:#a9884f}
+#halls .hall-address{display:grid;grid-template-columns:52px 1fr;gap:7px 8px;margin:13px 0 0;min-height:108px;align-content:start;font-size:12px;line-height:1.65}
+#halls .hall-address dt{font-size:11px}#halls .hall-address dd{margin:0;min-height:40px}
+#halls .venue-details{border-top:1px solid #ded8cc}
+#halls .venue-details .venue-toggle{display:flex;justify-content:space-between;align-items:center;min-height:52px;font-size:14px;font-weight:700;color:#1d5b4b;cursor:pointer;list-style:none}
+#halls .venue-details .venue-toggle::-webkit-details-marker{display:none}
+#halls .venue-detail-body{padding:10px 0 18px;font-size:13px;line-height:1.7}
+#halls .venue-detail-body dl{margin:0}#halls .venue-detail-body dd{margin:0 0 12px}
+#halls .gmaps-link{width:100%;color:#1d5b4b;border-color:#1d5b4b;margin:0;min-height:48px}
+#halls .venue-consult-note{font-size:12px;margin-top:14px;color:#6e675e}
+#halls .venue-common-contact{text-align:center;padding:26px;margin-top:24px;background:#faf8f3;border:1px solid #ded8cc;border-radius:10px}
+#halls .venue-common-contact>p{font-size:15px;line-height:1.9}
+#halls .venue-common-contact .cta-tel{max-width:540px;margin:18px auto 0}
+#halls .hall-marker{font-size:18px}
+#halls .hall-marker:before{width:34px;height:34px;left:6px;top:4px;background:#1d5b4b;transition:background .15s,scale .15s}
+#halls .hall-marker.hall-only:before{background:#a9884f}
+#halls .hall-marker.approximate:before{border:3px dashed #745c31;background:#faf8f3;border-radius:50%;transform:none}
+#halls .hall-marker.approximate{color:#745c31}
+#halls .hall-marker.is-selected:before{background:#745c31;scale:1.15;box-shadow:0 0 0 4px #f0d07caa}
+#halls .hall-marker.is-selected{color:#fff}
+#halls #venue-map-selection{display:none}
+@media(max-width:767px){
+ #halls>.wrap{width:calc(100% - 24px);padding:24px 12px}
+ #halls .hall-layout{display:block}
+ #halls .filters{gap:7px}#halls .filters button{min-width:0;min-height:52px;font-size:15px}
+ #halls .map-legend{justify-content:flex-start;font-size:10px;gap:8px 14px;margin-bottom:16px}
+ #halls .map-toolbar{min-height:0;flex-direction:column;align-items:flex-start}
+ #halls #map-interact{font-size:12px;padding:7px 12px}
+ #halls #hall-map{height:360px}
+ #halls .hall-list{height:auto;overflow:visible;padding:3px;gap:20px;overscroll-behavior:auto}
+ #halls #hall-count{margin-top:20px}
+ #halls .venue-art{height:160px}
+ #halls .venue-body{padding:16px 16px 0}
+ #halls .hall-top h3{font-size:19px}
+ #halls .venue-common-contact{padding:20px 12px}
+ #halls .venue-common-contact>p{font-size:13px}
+ #halls .venue-common-contact .cta-tel .num{font-size:30px}
+ #halls #venue-map-selection:not([hidden]){display:grid;grid-template-columns:1fr auto;gap:2px 8px;align-items:center;position:absolute;z-index:500;bottom:48px;left:10px;right:10px;background:#fff;border:1px solid #a9884f;border-radius:9px;box-shadow:0 3px 10px #18302933;padding:9px 12px}
+ #halls #venue-map-selection strong{font-size:13px;color:#1d5b4b}
+ #halls #venue-map-selection small{font-size:10px}
+ #halls #venue-map-selection button{grid-column:2;grid-row:1/3;min-height:44px;background:#eaf2ee;border:0;border-radius:5px;color:#1d5b4b;font-size:11px;padding:7px}
+}
+
+/* Nearby northern venues: offset label heads, retain a leader to the exact coordinate. */
+#halls .hall-marker.pin-1:before{translate:-12px -14px}
+#halls .hall-marker.pin-1 span{translate:-12px -14px}
+#halls .hall-marker.pin-8:before{translate:20px -5px}
+#halls .hall-marker.pin-8 span{translate:20px -5px}
+#halls .hall-marker.pin-9:before{translate:-9px 8px}
+#halls .hall-marker.pin-9 span{translate:-9px 8px}
+#halls .hall-marker.pin-1:after,#halls .hall-marker.pin-8:after,#halls .hall-marker.pin-9:after{content:"";position:absolute;width:2px;height:22px;background:#745c31;left:23px;top:26px;transform-origin:bottom;z-index:-1}
+#halls .hall-marker.pin-1:after{transform:rotate(-35deg)}
+#halls .hall-marker.pin-8:after{transform:rotate(48deg)}
+#halls .hall-marker.pin-9:after{transform:rotate(-110deg);height:15px}
+
+#halls .venue-toggle{width:100%;border:0;padding:0;background:white;text-align:left;font-family:inherit}
