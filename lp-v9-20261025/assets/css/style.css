@@ -107,3 +107,26 @@ main>.v7-price-band{padding:17px 0 51px}.v7-price-band>.wrap{width:calc(100% - 3
  .fixed-cta{visibility:hidden;pointer-events:none;transform:translateY(110%);transition:transform .2s ease,visibility .2s}
  .fixed-cta.is-visible{visibility:visible;pointer-events:auto;transform:translateY(0)}
 }
+
+/* v12: proposal block only; preserve the desktop composition. */
+.proposal-mobile{display:none}
+@media(max-width:767px){
+ .proposal .proposal-desktop{display:none}
+ .proposal .proposal-mobile{display:block;padding:25px 24px 30px}
+ .proposal .proposal-mobile>h3{font-size:26px;font-weight:800;line-height:1.5;margin:0 0 20px;text-wrap:balance}
+ .proposal .proposal-photo{position:relative;margin:0 0 25px}
+ .proposal .proposal-photo>img{width:100%;height:200px;object-fit:cover;border-radius:4px}
+ .proposal .proposal-photo figcaption{position:absolute;bottom:5px;right:5px;background:#fffffff0;color:#22201d;font-size:12px;line-height:1.5;padding:1px 5px;border-radius:3px}
+ .proposal .proposal-copy{font-size:15px;line-height:1.8;word-break:auto-phrase;text-wrap:pretty;margin:0 0 25px;text-align:left}
+ .proposal .proposal-copy span{white-space:nowrap}
+ .proposal .proposal-benefits{display:grid;gap:16px;list-style:none;padding:0;margin:0 0 20px}
+ .proposal .proposal-benefits li{display:grid;grid-template-columns:63px minmax(0,1fr);gap:12px;align-items:center;min-height:92px;padding:12px;background:#a94d43;border-radius:14px;text-align:left}
+ .proposal .proposal-benefits img{width:63px;height:63px;object-fit:cover;border-radius:50%}
+ .proposal .proposal-benefits figure{position:relative;width:63px;height:63px;border-radius:50%;overflow:hidden}
+ .proposal .proposal-benefits figure img{object-position:60% 12%;object-fit:cover;transform:scale(2);transform-origin:60% 10%}
+ .proposal .proposal-benefits figcaption{position:absolute;bottom:2px;left:0;width:100%;font-size:12px;line-height:1.5;text-align:center;background:#fffffff0;color:#22201d;white-space:nowrap}
+ .proposal .proposal-benefits h3{color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:clamp(17px,4.8vw,20px);font-weight:800;line-height:1.5;margin:0;letter-spacing:-.03em}
+ .proposal .proposal-detail{font-size:13px;line-height:1.8;text-align:left;margin:0 0 20px}
+ .proposal .proposal-invite{font-size:18px;font-weight:800;line-height:1.5;text-wrap:balance}
+ .proposal .proposal-mobile .outline-btn{display:flex;justify-content:center;align-items:center;width:100%;min-height:56px;font-size:18px;margin-top:16px;padding:10px;border:2px solid #1d5b4b;border-radius:8px;background:#fff;color:#1d5b4b;box-shadow:0 4px #183029}
+}
