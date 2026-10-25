@@ -13,3 +13,12 @@ function update(){bar.classList.toggle('is-visible',mobile.matches&&window.scrol
 window.addEventListener('scroll',update,{passive:true});
 window.addEventListener('pageshow',update);mobile.addEventListener('change',update);update();
 })();
+
+/* 同じ画面に電話ボタンが見えている間は、追従バーを隠す（電話ボタンが2つ重ならないように） */
+(function(){'use strict';
+var bar=document.querySelector('.fixed-cta');if(!bar||!('IntersectionObserver' in window))return;
+var targets=Array.from(document.querySelectorAll('a[data-cta="tel"]')).filter(function(a){return !a.closest('.fixed-cta')&&!a.closest('header');});
+var visible=new Set();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)visible.add(e.target);else visible.delete(e.target);});bar.classList.toggle('is-covered',visible.size>0);},{threshold:0.4});
+targets.forEach(function(t){io.observe(t);});
+})();

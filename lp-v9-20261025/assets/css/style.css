@@ -132,3 +132,41 @@ main>.v7-price-band{padding:17px 0 51px}.v7-price-band>.wrap{width:calc(100% - 3
 }
 
 @media(max-width:767px){.proposal .proposal-mobile .proposal-detail{list-style:none;padding:0;margin:0 0 22px;font-size:14px;line-height:1.8;text-align:left;color:#22201d}.proposal .proposal-mobile .proposal-detail li{margin:0 0 14px}.proposal .proposal-mobile .proposal-detail li:last-child{margin-bottom:0}.proposal .proposal-mobile .proposal-detail b{display:block;font-size:15px;font-weight:800;color:#1d5b4b;line-height:1.5;margin-bottom:2px}}
+
+/* v14: 含まれるもの・別途かかるもの（絵文字タイル） */
+.comparison-label{display:none!important}
+.comparison{overflow:visible}
+.comparison-plan .plan-spacer{display:none}
+.inc-group{margin:0 0 22px}
+.inc-group h4{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:17px;font-weight:800;color:#1d5b4b}
+.inc-group h4 b{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1d5b4b;color:#fff;font-size:15px}
+.inc-extra h4{color:#745c31}.inc-extra h4 b{background:#a9884f}
+.inc-no h4{color:#6e675e}.inc-no h4 b{background:#a8a39a}
+.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tiles li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:14px 6px 12px;border-radius:12px;background:#fff;border:2px solid #cfe0d8;min-height:112px}
+.tiles .tile-ic{font-size:34px;line-height:1}
+.tiles .tile-name{font-size:13px;font-weight:700;line-height:1.45;color:#22201d;word-break:auto-phrase}
+.tiles em{font-style:normal;font-size:12px;font-weight:800;color:#745c31;background:#f4ead2;border-radius:999px;padding:2px 9px;line-height:1.5}
+.tiles.ok li{border-color:#9cc4b4;background:#f3f9f6}
+.tiles.extra li{border:2px dashed #a9884f;background:#fffaf0}
+.tiles.no li{border:2px solid #e3ddd2;background:#f6f3ed;opacity:.75}
+.tiles.no .tile-ic{filter:grayscale(1)}
+.tiles.no em{background:#e8e3d9;color:#6e675e}
+.comparison .legend{font-size:13px;color:#6e675e;margin:4px 0 0}
+@media(min-width:768px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* v14: 「待つ日数で、どう変わる？」グラフは一旦非表示 */
+.sim-followup,#wait-graph{display:none!important}
+/* v14: 追従バーは、同じ画面に電話ボタンが出ている間は隠す */
+.fixed-cta.is-covered{transform:translateY(120%)!important;opacity:0!important;pointer-events:none!important;visibility:hidden}
+
+/* v14: 斎場カードの写真 */
+.venue-art.has-photo{position:relative;padding:0;min-height:0;height:170px;overflow:hidden;background:#dfe9e4}
+.venue-art.has-photo>img{display:block;width:100%;height:100%;object-fit:cover}
+.venue-art.has-photo>span:not(.venue-number),.venue-art.has-photo>svg{display:none}
+.venue-art.has-photo .photo-credit{position:absolute;right:6px;bottom:6px;font-size:12px;line-height:1.5;color:#fff;background:rgba(24,48,41,.72);padding:1px 7px;border-radius:3px}
+.venue-art.has-photo .venue-number{z-index:2}
+@media(min-width:768px){.venue-art.has-photo{height:200px}}
+
+/* v14b */
+.venue-art.has-photo .photo-credit{color:#fff!important;font-size:12px!important;line-height:1.5!important;background:rgba(24,48,41,.82)!important;padding:2px 8px!important}
+.tiles .tile-note{font-size:12px;font-weight:700;color:#745c31;line-height:1.4;margin-top:-2px}
