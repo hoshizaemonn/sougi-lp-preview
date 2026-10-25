@@ -130,3 +130,5 @@ main>.v7-price-band{padding:17px 0 51px}.v7-price-band>.wrap{width:calc(100% - 3
  .proposal .proposal-invite{font-size:18px;font-weight:800;line-height:1.5;text-wrap:balance}
  .proposal .proposal-mobile .outline-btn{display:flex;justify-content:center;align-items:center;width:100%;min-height:56px;font-size:18px;margin-top:16px;padding:10px;border:2px solid #1d5b4b;border-radius:8px;background:#fff;color:#1d5b4b;box-shadow:0 4px #183029}
 }
+
+@media(max-width:767px){.proposal .proposal-mobile .proposal-detail{list-style:none;padding:0;margin:0 0 22px;font-size:14px;line-height:1.8;text-align:left;color:#22201d}.proposal .proposal-mobile .proposal-detail li{margin:0 0 14px}.proposal .proposal-mobile .proposal-detail li:last-child{margin-bottom:0}.proposal .proposal-mobile .proposal-detail b{display:block;font-size:15px;font-weight:800;color:#1d5b4b;line-height:1.5;margin-bottom:2px}}
