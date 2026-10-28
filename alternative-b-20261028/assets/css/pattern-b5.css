@@ -61,3 +61,31 @@
 .b4 main>.b5-mobile-hero{height:calc(195px + 100vw)}
 .b5-heading{padding-top:22px}.b5-price{top:207px}.b5-heading h1{font-size:42px}
 }
+
+/* B8: desktop shares the approved photographic composition. */
+@media(min-width:768px){
+.b4 main>.b5-desktop-hero{height:570px;min-height:0;padding:0;background:radial-gradient(ellipse at 55% 60%,#326d59,#1d5142 48%,#183029 100%)}
+.b4 .b5-desktop-hero .pattern-copy{width:470px;margin-left:max(30px,calc((100% - 1080px)/2));padding-top:65px;text-align:center}
+.b4 .b5-desktop-hero .pattern-pill{display:table;margin:0 auto 18px;background:white;color:#1d5b4b;border-radius:999px;padding:6px 22px;font-size:22px;font-weight:700}
+.b4 .b5-desktop-hero h1{font-size:64px;line-height:1.4;margin:0 0 18px;letter-spacing:.08em}
+.b4 .b5-desktop-hero h1:before,.b4 .b5-desktop-hero h1:after{content:none}
+.b4 .b5-desktop-hero h1 span{color:#f0d07c}
+.b4 .b5-desktop-hero .pattern-message{font-size:24px;margin:0 0 28px;line-height:1.5}
+.b4 .b5-desktop-hero .pattern-price{margin:0}
+.b4 .b5-desktop-hero .pattern-price>p:first-child{font-size:20px;margin:0}
+.b4 .b5-desktop-hero .pattern-price strong{font-size:100px;line-height:1.1}
+.b4 .b5-desktop-hero .pattern-price>div>span{font-size:39px}
+.b4 .b5-desktop-hero .pattern-note{font-size:13px;line-height:1.6;margin-top:10px}
+.b4 .b5-desktop-hero .pattern-photo{right:max(10px,calc((100% - 1180px)/2));bottom:0;width:570px;height:570px}
+.b4 .b5-desktop-hero .pattern-photo img{object-fit:contain;mask-image:none;opacity:1}
+}
+@media(min-width:768px) and (max-width:1100px){
+.b4 main>.b5-desktop-hero{height:510px}
+.b4 .b5-desktop-hero .pattern-copy{width:44%;margin-left:3%;padding-top:55px}
+.b4 .b5-desktop-hero .pattern-photo{width:53vw;height:53vw;max-height:510px;right:0}
+.b4 .b5-desktop-hero .pattern-pill{font-size:17px;padding:6px 12px}
+.b4 .b5-desktop-hero h1{font-size:48px}
+.b4 .b5-desktop-hero .pattern-message{font-size:19px}
+.b4 .b5-desktop-hero .pattern-price strong{font-size:80px}
+.b4 .b5-desktop-hero .pattern-price>div>span{font-size:30px}
+}
