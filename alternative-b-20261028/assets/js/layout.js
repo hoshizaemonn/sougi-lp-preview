@@ -1,0 +1,15 @@
+(function(){'use strict';
+var tabs=Array.from(document.querySelectorAll('[data-place]'));
+function select(index){tabs.forEach(function(b,i){b.setAttribute('aria-selected',String(i===index));b.tabIndex=i===index?0:-1;document.getElementById('place-'+i).hidden=i!==index;});}
+tabs.forEach(function(b,i){b.addEventListener('click',function(){select(i);});b.addEventListener('keydown',function(e){var n=i;if(e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();select(n);tabs[n].focus();});});select(0);
+var button=document.querySelector('.comparison-toggle'),panel=document.getElementById('plan-details');panel.hidden=true;button.addEventListener('click',function(){var open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));panel.hidden=!open;button.querySelector('span').textContent=open?'−':'＋';});
+document.querySelectorAll('[data-card-plan]').forEach(function(b){b.addEventListener('click',function(){if(panel.hidden)button.click();var tab=document.querySelector('[data-plan-tab="'+b.dataset.cardPlan+'"]');tab.click();panel.scrollIntoView({block:'start',behavior:'auto'});tab.focus({preventScroll:true});});});
+})();
+/* Mobile phone bar appears only after the first 300px of scrolling. */
+(function(){'use strict';
+var bar=document.querySelector('.fixed-cta');if(!bar)return;
+var mobile=window.matchMedia('(max-width:767px)');
+function update(){bar.classList.toggle('is-visible',mobile.matches&&window.scrollY>=300);}
+window.addEventListener('scroll',update,{passive:true});
+window.addEventListener('pageshow',update);mobile.addEventListener('change',update);update();
+})();
