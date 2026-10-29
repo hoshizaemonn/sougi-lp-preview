@@ -289,3 +289,20 @@
 @media(min-width:768px){
  .m17-visual>.m24-room{height:100%;top:0;bottom:0;object-position:70% center}
 }
+/* B31 desktop: prominent side-by-side badge and price. */
+@media(min-width:768px){
+ .m17-top{width:500px}
+ .m19-badge{width:216px;height:216px;margin:22px 0 0 4px}
+ .m17-price{position:absolute;left:max(252px,calc((100% - 960px)/2 + 228px));top:218px;width:242px;margin:0}
+ .m17-price>p:first-child{font-size:17px;padding:3px 26px;margin-bottom:7px}
+ .m17-price strong{font-size:82px}
+ .m17-unit b{font-size:30px}.m17-unit small{font-size:12px}
+ .m17-price .m17-note{font-size:11px;line-height:1.5;margin-top:8px}
+ .m17-cta{margin-top:72px}
+}
+@media(min-width:768px) and (max-width:1050px){
+ .m17-top{width:48%}.m19-badge{width:172px;height:172px;margin:24px 0 0}
+ .m17-price{left:calc(24px + 22%);top:217px;width:24%}
+ .m17-price strong{font-size:64px}.m17-unit b{font-size:23px}.m17-price>p:first-child{font-size:14px;padding:2px 17px}.m17-price .m17-note{font-size:10px}
+ .m17-cta{margin-top:102px}
+}
