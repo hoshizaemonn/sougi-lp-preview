@@ -33,3 +33,17 @@
  .impact-hero:before{background:linear-gradient(180deg,#183b30 0,#183b30 32%,#183b30a8 40%,#183b3000 57%),linear-gradient(90deg,#183b30f5 0,#183b30cc 30%,#183b3000 70%)}
  .impact-fv-price .impact-price-note{background:#183b30bf;border-radius:3px}
 }
+
+/* B15: white field with the bright gold price retained. */
+.b4 .impact-hero{background:#fff}
+.impact-hero:before{background:linear-gradient(90deg,#fff 0%,#fff 28%,#ffffffed 38%,#ffffffa8 47%,#ffffff00 66%)}
+.impact-region{background:#183b30;color:#fff}
+.impact-urgent{color:#a44035;border-color:#b9463a}
+.b4 .impact-copy h1,.impact-lead,.impact-fv-price{color:#183029}
+.impact-lead b,.impact-extra{color:#745c31}
+.impact-fv-price strong{color:#d9b872}
+.impact-fv-price .impact-price-note{color:#22201d;background:transparent}
+@media(max-width:767px){
+ .impact-hero:before{background:linear-gradient(180deg,#fff 0,#fff 32%,#ffffffa8 40%,#ffffff00 57%),linear-gradient(90deg,#fffffff5 0,#ffffffcc 30%,#ffffff00 70%)}
+ .impact-fv-price .impact-price-note{background:#ffffffdb}
+}
