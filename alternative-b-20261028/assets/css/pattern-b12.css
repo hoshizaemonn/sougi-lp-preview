@@ -234,3 +234,13 @@
  .m17-top,.m17-price{width:48%}.mobile17 h1{font-size:32px}.m17-pill{font-size:18px;padding:5px 16px}.m19-badge{width:165px;height:165px}.m17-visual>.m24-room{width:46%;height:330px;right:24px;top:68px}.m17-caption{top:378px;right:30px}.m17-price strong{font-size:59px}.m17-cta{padding:14px;gap:15px}.m17-cta strong{font-size:30px}.m17-sim{font-size:15px}
 }
 @media(min-width:768px) and (max-width:1050px){.m17-visual>.m24-room{object-position:100% center}}
+/* B25 desktop: blend the room into the hero; restore B23 CTA palette. */
+@media(min-width:768px){
+ .m17-visual>.m24-room{width:540px;height:410px;top:18px;right:max(0px,calc((100% - 1040px)/2));border-radius:0;object-position:74% center;mask-image:linear-gradient(to right,transparent 0%,#000 17%,#000 91%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 15%,#000 77%,transparent 100%);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 17%,#000 91%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 15%,#000 77%,transparent 100%);-webkit-mask-composite:source-in}
+ .m17-caption{top:398px;background:transparent}
+ .m17-cta{background:#183029e8;border:0;border-top:1px solid #a9884f;border-radius:0;box-shadow:none}
+ .m17-sim{background:transparent;border:1px solid #bda164;color:#fff}
+}
+@media(min-width:768px) and (max-width:1050px){
+ .m17-visual>.m24-room{width:52%;height:380px;top:34px;right:0;object-position:90% center}.m17-caption{top:392px}
+}
