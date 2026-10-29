@@ -306,3 +306,54 @@
  .m17-price strong{font-size:64px}.m17-unit b{font-size:23px}.m17-price>p:first-child{font-size:14px;padding:2px 17px}.m17-price .m17-note{font-size:10px}
  .m17-cta{margin-top:102px}
 }
+/* B32 below-FV: reference-style centered labels, strong headings and illustrated panels. */
+.b4 main>section[id]{padding:64px 0;background:#fff}
+.b4 main>section[id]>.wrap{width:calc(100% - 48px);max-width:1000px}
+.b4 main>section[id] h2{font-family:'Noto Sans JP',sans-serif;font-size:32px;font-weight:800;color:#222b26;line-height:1.5;text-align:center;margin:0 0 30px;border:0;padding:0;letter-spacing:0}
+.b4 main>section[id] h2:before,.b4 main>section[id] h2:after{display:none}
+.b4 main>section[id] h2 .b32-heading{background:linear-gradient(transparent 78%,#ead489 78%,#ead489 96%,transparent 96%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.b4 main>section[id] h2 mark{background:none;color:inherit}
+.b4 main>section[id] h2 br{display:none}
+.b4 main>section[id] .kicker,.b4 main>section[id]>.wrap>.b3-pill{display:table;max-width:100%;margin:0 auto 18px;padding:8px 30px;border:0;border-radius:999px;background:#477f6b;color:#fff;font:700 17px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.02em}
+.b4 main>section[id] .sec-lead{text-align:center;font:500 16px/1.9 'Noto Sans JP',sans-serif;margin:0 auto 28px;max-width:800px;color:#39463f}
+.b32-panel{background:#fff;border:1px solid #dedfd9;box-shadow:0 2px 12px #18302910;border-radius:4px;padding:36px 34px}
+.b4 #proposal{background:#fff}.b4 #proposal .sec-lead{font-size:19px;font-weight:700}
+.b4 #proposal .b4-strength-grid{gap:20px;margin:28px 0 0}
+.b4 #proposal .b4-strength-grid article{border:2px solid #477f6b;border-radius:7px;box-shadow:0 3px 7px #18302918;padding:24px 18px 18px}
+.b4 #proposal .b4-no{display:none}
+.b4 #proposal .b4-strength-grid h3{font-family:'Noto Sans JP',sans-serif;font-size:23px;line-height:1.5;font-weight:800;margin-bottom:14px}
+.b4 #proposal .b4-strength-grid .icon{width:96px;height:96px;padding:20px;border-radius:50%;background:#eaf2ee;color:#2d6c53;margin:0 0 20px;stroke-width:1.6}
+.b4 #proposal .b4-strength-grid p{font-size:15px;color:#626a64;line-height:1.8}
+.b4 #proposal .b4-strength-grid a{font-size:14px}
+.b4 .b22-shortcuts{margin-top:28px;gap:12px}.b4 .b22-shortcuts a{background:#fff;border:1px solid #477f6b;color:#245647;border-radius:4px;box-shadow:0 3px #d4dfd7}
+.b4 #plans{background:#f5f7f4}.b4 #plans .price-cards{gap:18px}.b4 #plans .price-card{border:1px solid #b7cbbf;border-top:5px solid #477f6b;box-shadow:none;border-radius:5px}.b4 #plans .price-card h3{font-family:'Noto Sans JP',sans-serif;font-weight:800}.b4 #plans .plan-price strong{color:#96712f}.b4 #plans .review-note{margin:0 0 22px;padding:12px 16px;background:#faf8f3;border-left:3px solid #a9884f;font-size:13px}
+.b4 #sim{background:#fff}.b4 #sim .calculator-sheet{border:1px solid #d4ddd5;border-radius:4px;padding:32px;box-shadow:0 2px 12px #18302910}.b4 #sim .calculator-sheet h3{font-family:'Noto Sans JP',sans-serif;font-weight:800;font-size:25px}.b4 #sim .sim-layout{background:#f3f6f2;border-radius:4px;padding:24px;gap:28px}.b4 #sim .sim-result{background:#245647;border-radius:5px}.b4 #sim .graph-panel{background:#fff;border:1px solid #d4ddd5;border-radius:4px;padding:28px}.b4 #sim .disclaim{border:1px solid #dfd6c4;background:#faf8f3;padding:20px;border-radius:4px;font-size:14px;line-height:1.9}
+.b4 #estimate{background:#f5f7f4}.b4 #estimate .b4-comparison-table{background:#edf1ec;padding:26px;border:0;border-radius:4px;overflow:visible}
+.b4 #estimate table,.b4 #estimate tbody{display:block}.b4 #estimate caption{display:block;padding:0 0 20px;background:none;color:#245647;font-size:22px;font-weight:800;text-align:center}.b4 #estimate thead{display:none}
+.b4 #estimate tbody tr{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:0;margin-bottom:16px;padding:22px 24px;gap:12px 24px;box-shadow:0 1px 3px #18302908}.b4 #estimate tbody tr:last-child{margin-bottom:0}
+.b4 #estimate tbody th{grid-column:1/-1;width:100%;background:none;border:0;padding:0;font-size:21px;color:#245647;font-weight:800}.b4 #estimate tbody th:before{content:'✓';color:#b9463a;margin-right:10px;font-size:25px}
+.b4 #estimate tbody td{display:block;width:100%;padding:0;border:0;font-size:15px;background:none;line-height:1.85}.b4 #estimate tbody td:before{content:attr(data-label);display:block;color:#6c746e;font-size:13px;font-weight:700;margin-bottom:5px}.b4 #estimate tbody td:last-child{border-left:2px solid #dbe6dd;padding-left:24px;background:none;font-weight:600}.b4 #estimate tbody td:last-child:before{color:#245647}
+.b4 #estimate .b4-compare-bottom{border-radius:4px;background:#eaf2ee}.b4 #estimate .b4-compare-bottom>strong{font-family:'Noto Sans JP',sans-serif;font-size:22px}
+.b4 #halls{background:#fff}.b4 #halls .map-workspace{border-radius:4px}.b4 #halls .hall-card{border-radius:5px;box-shadow:0 2px 8px #18302912}.b4 #halls .hall-contact{background:#f1f5ef;border:1px solid #c7d7cb;border-radius:4px}
+.b4 #urgent{background:#f5f7f4}.b4 #urgent .v7-intro-card{box-shadow:none;border:0;background:none}.b4 #urgent .step-card h3{font-family:'Noto Sans JP',sans-serif;font-weight:800}.b4 #urgent .urgent-more{background:#fff;border:1px solid #d4ddd5;border-radius:4px}
+.b4 #flow{background:#fff}.b4 #flow .flow>li{border:1px solid #d4ddd5;border-radius:5px;background:#fff;box-shadow:0 2px 8px #1830290c}.b4 #flow h3{font-family:'Noto Sans JP',sans-serif;font-weight:800}.b4 #flow .flow-band{background:#eaf2ee;color:#245647}
+.b4 #faq{background:#f5f7f4}.b4 #faq details{background:#fff;border:1px solid #d4ddd5;border-radius:4px;margin-bottom:16px;box-shadow:0 1px 4px #18302908}.b4 #faq summary{font-family:'Noto Sans JP',sans-serif;font-size:19px;font-weight:700}.b4 #sodan{background:#fff}.b4 #sodan .form-wrap{border:1px solid #d4ddd5;border-radius:4px;box-shadow:0 2px 12px #1830290c}.b4 #operator{background:#f5f7f4}
+@media(max-width:767px){
+ .b4 main>section[id]{padding:40px 0}.b4 main>section[id]>.wrap{width:calc(100% - 28px)}
+ .b4 main>section[id] h2{font-size:25px;line-height:1.55;margin-bottom:24px;text-wrap:balance}
+ .b4 main>section[id] .kicker,.b4 main>section[id]>.wrap>.b3-pill{font-size:13px;padding:7px 15px;margin-bottom:15px}
+ .b4 main>section[id] .sec-lead{font-size:15px;line-height:1.9;margin-bottom:22px}
+ .b32-panel{padding:22px 16px}.b4 #proposal .sec-lead{font-size:16px}
+ .b4 #proposal .b4-strength-grid{gap:16px;margin-top:20px}.b4 #proposal .b4-strength-grid article{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;padding:20px 14px}.b4 #proposal .b4-strength-grid .icon{width:64px;height:64px;padding:14px;margin:0}.b4 #proposal .b4-strength-grid h3{font-size:19px;margin:0}.b4 #proposal .b4-strength-grid p{font-size:14px;margin:0}.b4 .b22-shortcuts{grid-template-columns:1fr;gap:10px;margin-top:22px}.b4 .b22-shortcuts a{font-size:15px;padding:12px}
+ .b4 #plans .b32-panel{padding:20px 12px}.b4 #plans .price-card .plan-spacer{grid-template-columns:35% minmax(0,1fr)}.b4 #plans .price-card h3{font-size:20px}.b4 #plans .plan-price strong{font-size:34px}.b4 #plans .plan-inclusions{font-size:14px}.b4 #plans .review-note{font-size:12px}
+ .b4 #sim .calculator-sheet{padding:20px 14px}.b4 #sim .calculator-sheet h3{font-size:21px}.b4 #sim .sim-layout{padding:16px 10px;gap:20px}.b4 #sim .sim-result .val{font-size:clamp(22px,6vw,27px)}.b4 #sim .graph-panel{padding:20px 12px}.b4 #sim .disclaim{padding:16px;font-size:13px}
+ .b4 #estimate .b32-panel{padding:20px 12px}.b4 #estimate .b4-comparison-table{padding:16px 10px}.b4 #estimate caption{font-size:19px}.b4 #estimate tbody tr{grid-template-columns:1fr;padding:18px 14px;gap:14px}.b4 #estimate tbody th{font-size:18px}.b4 #estimate tbody td{font-size:14px}.b4 #estimate tbody td:last-child{border-left:0;border-top:1px solid #dbe6dd;padding:12px 0 0}.b4 #estimate tbody td:before{font-size:12px}.b4 #estimate .b4-compare-bottom{padding:20px 12px}.b4 #estimate .b4-compare-bottom>strong{font-size:18px}
+ .b4 #faq summary{font-size:17px}
+}
+.b4 :is(#proposal,#plans,#sim,#estimate,#halls,#urgent,#flow,#faq,#sodan,#operator) h2{font-family:'Noto Sans JP',sans-serif;font-size:32px;font-weight:800;line-height:1.5}
+@media(max-width:767px){
+ .b4 :is(#proposal,#plans,#sim,#estimate,#halls,#urgent,#flow,#faq,#sodan,#operator) h2{font-size:25px;line-height:1.55}
+ .b4 #plans .price-card .plan-spacer{gap:6px 14px;padding-top:12px}
+ .b4 #plans .price-card .plan-spacer .photo{margin:0;overflow:hidden}
+}
+@media(min-width:768px){.b4 #plans .price-card>.plan-spacer{grid-template-rows:66px 64px auto}.b4 #plans .price-card .photo{height:116px}.b4 #plans .price-card h3{font-size:22px}.b4 #plans .price-card>.plan-spacer>p:not(.plan-price){font-size:13px}}
