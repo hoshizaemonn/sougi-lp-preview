@@ -260,3 +260,13 @@
  .m17-caption{top:12px;right:12px}
 }
 @media(min-width:768px){.m17-visual>.m24-room{object-position:70% 18%}}
+/* B27 desktop: full-bleed room blends into the approved green field. */
+@media(min-width:768px){
+ .b4 .mobile17{background:linear-gradient(110deg,#285e50 0%,#477f6b 55%,#245647 100%)}
+ .m17-pill{background:#fff;color:#245647}
+ .mobile17 h1,.m17-price,.m17-unit small,.m17-price .m17-note{color:#fff}
+ .m17-price strong,.m17-unit b{color:#efcf83}
+ .m17-price>p:first-child{border-color:#f0d696}
+ .m19-badge{filter:none;background:transparent;border-radius:0;padding:0}
+ .m17-visual>.m24-room{mask-image:linear-gradient(to right,transparent 0%,#000 55%,#000 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 55%,#000 100%)}
+}
