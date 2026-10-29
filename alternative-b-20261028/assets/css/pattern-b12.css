@@ -285,3 +285,8 @@
 
 @media(min-width:768px){.m28-mobile{display:none}.m17-pill .m28-desktop{color:#245647;font-size:18px;line-height:1.4}.m17-visual>.m24-room{height:480px}}
 @media(min-width:768px) and (max-width:1050px){.m17-pill .m28-desktop{font-size:14px}.m17-visual>.m24-room{height:460px}}
+/* B29 desktop: the CTA is the full-width base of the hero, without a green gutter. */
+@media(min-width:768px){
+ .b4 .mobile17{padding-bottom:0}
+ .m17-cta{width:100vw;max-width:none;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding:20px max(24px,calc((100vw - 920px)/2));box-sizing:border-box;background:#183029;border-top:1px solid #a9884f}
+}
