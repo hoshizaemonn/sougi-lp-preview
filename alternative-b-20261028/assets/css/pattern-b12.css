@@ -12,3 +12,24 @@
 @media(min-width:768px) and (max-width:1050px){.impact-copy{min-height:520px}.impact-fv-price strong{font-size:64px}}
 @media(max-width:767px){.impact-copy{padding:18px 16px 0;min-height:510px}.impact-region{font-size:10px;padding:5px 10px;margin-bottom:13px}.impact-urgent{font-size:11px;margin-bottom:10px}.b4 .impact-copy h1{font-size:clamp(26px,7.2vw,31px);line-height:1.5;margin-bottom:12px}.impact-lead{font-size:22px;margin-bottom:16px}.impact-lead>span{font-size:10px;max-width:160px}.impact-fv-price{position:relative;z-index:1;max-width:220px}.impact-fv-price>p:first-child{font-size:14px}.impact-fv-price>div{gap:5px}.impact-extra{font-size:10px;padding:4px}.impact-fv-price strong{font-size:clamp(48px,14vw,57px)}.impact-fv-price small{font-size:19px}.impact-tax{font-size:10px}.impact-fv-price .impact-price-note{font-size:10px;display:table;background:#faf8f3d9;padding:4px 5px;margin-left:-5px}.impact-scene{top:200px;height:320px}.impact-hero:before{height:520px;background:linear-gradient(180deg,#faf8f3 0,#faf8f3 32%,#faf8f3a8 40%,#faf8f300 51%),linear-gradient(90deg,#faf8f3ef 0,#faf8f3bb 30%,#faf8f300 65%)}.b4 .impact-hero{padding-bottom:24px}}
 @media(max-width:767px) and (max-height:700px){.impact-copy{min-height:410px;padding-top:12px}.impact-region{margin-bottom:9px}.impact-urgent{margin-bottom:8px}.b4 .impact-copy h1{font-size:25px;line-height:1.4;margin-bottom:8px}.impact-lead{font-size:19px;margin-bottom:10px}.impact-lead>span{max-width:none;font-size:9px}.impact-fv-price strong{font-size:48px}.impact-scene{top:170px;height:250px}.impact-hero:before{height:420px}.impact-fv-price .impact-price-note{font-size:9px}}
+
+/* B14: deep green field, white headline, luminous gold price. */
+.b4 .impact-hero{background:#183b30}
+.impact-hero:before{background:linear-gradient(90deg,#183b30 0%,#183b30 28%,#183b30ed 38%,#183b30a8 47%,#183b3000 66%)}
+.impact-region{background:#faf8f3;color:#1d5b4b;font-weight:700}
+.impact-urgent{color:#efd597;border-color:#d9b872}
+.b4 .impact-copy h1{color:#fff}
+.impact-copy h1 em{background:none}
+.impact-lead,.impact-fv-price{color:#fff}
+.impact-lead b,.impact-fv-price strong,.impact-extra{color:#f0d28b}
+.impact-extra{border-color:#d9b872}
+.impact-fv-price .impact-price-note{color:#fff;background:transparent}
+.impact-actions{background:#112c23;box-shadow:0 6px 20px #081b1740}
+@media(max-width:767px){
+ .impact-region{margin-left:auto;margin-right:auto}
+ .impact-urgent{text-align:center;border:0;padding-left:0}
+ .b4 .impact-copy h1{text-align:center}
+ .impact-lead{color:#fff}
+ .impact-hero:before{background:linear-gradient(180deg,#183b30 0,#183b30 32%,#183b30a8 40%,#183b3000 57%),linear-gradient(90deg,#183b30f5 0,#183b30cc 30%,#183b3000 70%)}
+ .impact-fv-price .impact-price-note{background:#183b30bf;border-radius:3px}
+}
