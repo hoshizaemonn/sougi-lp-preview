@@ -270,3 +270,18 @@
  .m19-badge{filter:none;background:transparent;border-radius:0;padding:0}
  .m17-visual>.m24-room{mask-image:linear-gradient(to right,transparent 0%,#000 55%,#000 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 55%,#000 100%)}
 }
+
+/* B28: same core message, concise desktop context; approved mobile unchanged. */
+.m28-desktop{display:none}
+@media(min-width:768px){
+ .m28-desktop{display:block;color:#fff;font-family:'Noto Sans JP',sans-serif;font-weight:700;line-height:1.5}
+ .m28-region{font-size:17px;margin:0 0 5px;letter-spacing:.03em}
+ .m28-support{font-size:16px;margin:0 0 8px}
+ .mobile17 h1{margin-bottom:5px}
+ .m19-badge{width:156px;height:156px}
+ .m17-visual>.m24-room{height:505px}
+}
+@media(min-width:768px) and (max-width:1050px){.m28-region{font-size:14px}.m28-support{font-size:14px}.m19-badge{width:150px;height:150px}.m17-visual>.m24-room{height:485px}}
+
+@media(min-width:768px){.m28-mobile{display:none}.m17-pill .m28-desktop{color:#245647;font-size:18px;line-height:1.4}.m17-visual>.m24-room{height:480px}}
+@media(min-width:768px) and (max-width:1050px){.m17-pill .m28-desktop{font-size:14px}.m17-visual>.m24-room{height:460px}}
