@@ -244,3 +244,19 @@
 @media(min-width:768px) and (max-width:1050px){
  .m17-visual>.m24-room{width:52%;height:380px;top:34px;right:0;object-position:90% center}.m17-caption{top:392px}
 }
+/* B26 desktop: full-bleed room with an ivory fade only toward the copy. */
+@media(min-width:768px){
+ .b4 .mobile17{background:#faf8f3}
+ .m17-visual>.m24-room{width:72%;height:470px;max-width:none;top:0;right:0;object-fit:cover;object-position:70% center;mask-image:linear-gradient(to right,transparent 0%,#000 44%,#000 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 44%,#000 100%);mask-composite:add;-webkit-mask-composite:source-over}
+ .m17-pill{background:#245647;color:#fff}
+ .mobile17 h1,.m17-price,.m17-unit small,.m17-price .m17-note{color:#183029}
+ .m17-price strong,.m17-unit b{color:#99783c}
+ .m17-price>p:first-child{border-color:#a9884f}
+ .m19-badge{filter:drop-shadow(0 1px 1px #18302955);background:#376956;border-radius:50%;padding:5px}
+ .m17-caption{top:12px;right:20px;background:#183029b3}
+}
+@media(min-width:768px) and (max-width:1050px){
+ .m17-visual>.m24-room{width:65%;height:450px;top:0;right:0;object-position:80% center;mask-image:linear-gradient(to right,transparent,#000 40%);-webkit-mask-image:linear-gradient(to right,transparent,#000 40%)}
+ .m17-caption{top:12px;right:12px}
+}
+@media(min-width:768px){.m17-visual>.m24-room{object-position:70% 18%}}
