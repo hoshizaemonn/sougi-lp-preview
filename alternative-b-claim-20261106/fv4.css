@@ -63,3 +63,35 @@ body .fv4 h1{font-size:min(3.3vw,46px)}
 
 .fv4-pro span,.fv4-lead{text-wrap:balance;word-break:keep-all;overflow-wrap:anywhere}
 .fv4-photo img{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%,#000 84%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%,#000 84%,transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}
+
+/* 仮置き（True Heart様確認待ち） */
+.kari{display:inline-block;background:#f3d9a4;color:#5b3d00;border-radius:4px;font-size:11px;font-weight:900;line-height:1;padding:3px 6px;margin-right:6px;vertical-align:middle}
+.fv4 .fv4-fast{margin:12px 0 0;font-size:14px;font-weight:800;line-height:1.6;color:#fff;border:2px dashed #f3d9a4;border-radius:10px;padding:8px 12px}
+.fv4-fast b{font-size:1.25em;color:#f3d9a4}
+.fv4-fast small{display:block;font-size:11px;font-weight:700;color:#eaf2ee}
+body.b4 main>section.fv4b{background:#f2ede4;color:#22201d;padding:26px 0 30px;font-family:"Noto Sans JP",sans-serif;text-align:left;display:block;min-height:0}
+.fv4b *{box-sizing:border-box}
+.fv4b-in{width:calc(100% - 32px);max-width:1040px;margin:0 auto}
+.fv4b-note{margin:0 0 12px;font-size:12px;font-weight:700;color:#5b3d00;background:#fff7e0;border:1px dashed #c9a24b;border-radius:8px;padding:8px 10px;line-height:1.6}
+body .fv4b h2{font-family:"Noto Sans JP",sans-serif;font-size:clamp(20px,5.4vw,26px);font-weight:900;color:#183029;margin:0 0 14px;text-align:left}
+.fv4b-num{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fv4b-num li{background:#fff;border:2px dashed #c9a24b;border-radius:12px;padding:12px 8px;text-align:center}
+.fv4b-num b{display:block;font-size:clamp(20px,6vw,30px);font-weight:900;color:#745c31;line-height:1.2;white-space:nowrap}
+.fv4b-num span{display:block;font-size:11px;font-weight:700;color:#625b52;line-height:1.5;margin-top:4px}
+.fv4b-voices{display:grid;gap:10px}
+.fv4b-voices article,.fv4b-staff{background:#fff;border:2px dashed #c9a24b;border-radius:12px;padding:14px}
+.fv4b-voices p{margin:0;font-size:14px;line-height:1.8}
+.fv4b-meta{font-size:12px!important;font-weight:700;color:#625b52;margin-bottom:6px!important}
+.fv4b-cost{margin-top:8px!important;font-size:13px!important;font-weight:900;color:#8e2e34}
+.fv4b-staff{display:flex;gap:14px;align-items:center;margin-top:10px}
+.fv4b-staff p{margin:0 0 4px;font-size:14px;line-height:1.7}
+.fv4b-face{flex:none;width:84px;height:84px;border-radius:50%;background:#e4ddd0;color:#8a8070;font-size:11px;font-weight:700;display:grid;place-items:center;text-align:center;line-height:1.4}
+@media(min-width:860px){
+.fv4 .fv4-fast{font-size:16px}
+body.b4 main>section.fv4b{padding:40px 0 44px}
+.fv4b-voices{grid-template-columns:1fr 1fr}
+.fv4b-num span{font-size:13px}
+}
+
+body .fv4b h2{font-size:min(5.2vw,26px);white-space:nowrap}
+.fv4b-num span{word-break:keep-all;overflow-wrap:anywhere}
