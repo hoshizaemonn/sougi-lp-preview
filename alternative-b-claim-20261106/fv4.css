@@ -143,3 +143,13 @@ body .fv4b h2{font-size:min(5.2vw,26px);white-space:nowrap}
 .m17-cta{margin-top:95px!important}
 .m17-price{top:150px!important}
 }
+
+.fv4-proof{display:block;background:#fff7e0;color:#22201d!important;text-decoration:none!important;text-align:center;font:700 12.5px/1.7 "Noto Sans JP",sans-serif;padding:8px 12px;border-bottom:1px solid #e6d8ae}
+.fv4-proof b{color:#745c31}.fv4-proof u{margin-left:6px;color:#245647}
+.vh{margin-top:22px!important}
+.vc{background:#fff;border:2px dashed #c9a24b;border-radius:12px;padding:14px}
+.vc h3{margin:0 0 8px;font-size:15px;font-weight:900;color:#183029}
+.vc dl{margin:0 0 10px;display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;background:#f2ede4;border-radius:8px;padding:8px 10px}
+.vc dl div{display:flex;flex-direction:column}.vc dt{font-size:10.5px;color:#625b52;font-weight:700}.vc dd{margin:0;font-size:13px;font-weight:900}
+.vc p{margin:0;font-size:13.5px;line-height:1.8}.vc .vc-head{font-size:15px;font-weight:900;color:#245647;margin-bottom:4px}
+.fv4b-voices article{border:0;padding:0}
