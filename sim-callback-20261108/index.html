@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>家族葬光 見積りシミュレーター 試作</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#222;--sub:#5d625f;--accent:#1d5b4b;--accent-d:#164a3c;--warn:#b3261e;--line:#d9d6cc;--hole:#fff8e1;--soft:#eef4f1}
+@media (prefers-color-scheme:dark){:root{--bg:#171a19;--card:#202523;--ink:#ecebe6;--sub:#a9aeaa;--accent:#7fc7b0;--accent-d:#9bd9c4;--warn:#ff8a80;--line:#3a413e;--hole:#3a3320;--soft:#1f2c27}}
+*{box-sizing:border-box}
+.lead,.help,.note,.card p,th,td,.sum-box{word-break:auto-phrase;text-wrap:pretty}
+th{font-size:14px}
+.nb{display:inline-block;white-space:nowrap}
+input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;height:44px;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:8px;background:var(--line);border-radius:4px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--accent);margin-top:-11px;border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.35)}
+input[type=range]::-moz-range-track{height:8px;background:var(--line);border-radius:4px}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--accent);border:3px solid #fff}
+.opts .nm{display:block;font-weight:700}
+.opts .nm small{display:block;color:var(--sub);font-weight:400;margin:0;font-size:13px;white-space:normal}
+tr.grp.out th{background:var(--hole);color:var(--warn)}
+.btn .l1,.btn .l3{display:block}
+.btn .l2{display:block;font-size:22px;white-space:nowrap;line-height:1.4}
+.btn .l3{font-size:13px;font-weight:600}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 -apple-system,"Hiragino Sans","Yu Gothic",sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 120px}
+.banner{background:var(--hole);border:2px dashed var(--warn);border-radius:12px;padding:12px 14px;margin:0 0 18px;font-size:14px}
+.banner b{color:var(--warn)}
+.kari{display:inline-block;background:var(--warn);color:#fff;border-radius:4px;padding:0 6px;font-size:12px;font-weight:700;margin-right:4px;vertical-align:1px}
+.kicker{color:var(--accent);font-weight:700;margin:0;font-size:14px;text-align:center}
+h1{font-size:24px;line-height:1.4;margin:4px 0 8px;text-align:center}
+.lead{color:var(--sub);font-size:15px;margin:0 0 18px;text-align:center}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px;margin:0 0 16px}
+.field{padding:14px 0;border-bottom:1px solid var(--line)}
+.field:last-child{border-bottom:0}
+.fl{font-weight:700;margin:0 0 8px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.fl output{color:var(--accent);font-size:20px;font-weight:700;white-space:nowrap}
+.help{color:var(--sub);font-size:13px;margin:6px 0 0;line-height:1.6}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg.two{grid-template-columns:repeat(2,1fr)}
+.seg button{font:inherit;font-weight:700;min-height:48px;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:6px 4px;cursor:pointer;line-height:1.3}
+.seg button[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--accent)}
+input[type=range]{width:100%}
+.opts{display:grid;gap:8px}
+.opts label{display:flex;align-items:center;gap:10px;min-height:48px;border:2px solid var(--line);border-radius:12px;padding:6px 12px;cursor:pointer}
+.opts input{width:22px;height:22px;accent-color:var(--accent);flex:none}
+.opts label.on{border-color:var(--accent);background:var(--soft)}
+
+.result{background:var(--accent);color:#fff;border-radius:16px;padding:16px;text-align:center;margin:0 0 16px;position:sticky;top:8px;z-index:3;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.result .lb{display:block;font-size:13px;opacity:.9}
+.result .val{display:block;font-size:28px;font-weight:800;line-height:1.3;letter-spacing:.02em}
+.result .sm{display:block;font-size:12px;opacity:.9}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+td{text-align:right;white-space:nowrap}
+tr.grp th{background:var(--soft);color:var(--accent);font-size:14px}
+tr.zero{color:var(--sub)}
+tr.sum th,tr.sum td{border-top:2px solid var(--accent);font-weight:800}
+.note{color:var(--sub);font-size:13px;line-height:1.7}
+.cb h2{font-size:19px;margin:0 0 6px;line-height:1.45}
+.sum-box{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:14px;margin:10px 0}
+.in{display:block;width:100%;font:inherit;font-size:17px;min-height:50px;border:2px solid var(--line);border-radius:12px;padding:8px 12px;background:var(--card);color:var(--ink);margin:4px 0 12px}
+label.t{font-weight:700;font-size:15px}
+.btn{display:block;width:100%;font:inherit;font-weight:800;font-size:17px;min-height:56px;border:0;border-radius:14px;background:var(--accent);color:#fff;cursor:pointer;padding:10px}
+.btn.sub{background:transparent;color:var(--accent);border:2px solid var(--accent);margin-top:10px;text-decoration:none;text-align:center;line-height:1.5}
+a.btn{display:block;padding:12px 8px}
+.msg{background:var(--hole);border:2px dashed var(--warn);border-radius:12px;padding:12px;margin-top:12px;font-size:14px;display:none}
+.pill{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:99px;padding:1px 10px;font-size:12px;font-weight:700;margin:2px 4px 2px 0}
+.fixed{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));z-index:5}
+.fixed a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;border-radius:12px;text-decoration:none;font-weight:800;line-height:1.3;font-size:15px}
+.fixed small{font-size:12px;font-weight:600}
+.fixed .tel{background:var(--accent);color:#fff}
+.fixed .cb-link{border:2px solid var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="banner"><span class="kari">試作</span><b>金額はすべて仮の数字です。</b>True Heart さんの確定値が来るまで、本番のLPには出しません。<br>
+ページの形・入力の順番・動きの確認用です。送信ボタンを押しても、何も送られません。</div>
+
+<p class="kicker">＼ 距離・人数を入れるだけ ／</p>
+<h1>葬儀の総額の目安を、その場で計算</h1>
+<p class="lead">お選びいただくと、下の金額が変わります。<br>お見積りの内訳も、その場でご覧いただけます。</p>
+
+<div class="card" id="inputs">
+  <div class="field">
+    <div class="fl"><span>1. ご葬儀のかたち</span></div>
+    <div class="seg" id="segPlan" role="group" aria-label="ご葬儀のかたち">
+      <button type="button" data-v="kasou" aria-pressed="true">火葬式</button>
+      <button type="button" data-v="ichinichi" aria-pressed="false">一日葬</button>
+      <button type="button" data-v="kazoku" aria-pressed="false">家族葬</button>
+    </div>
+    <p class="help" id="planHelp">通夜・告別式なし、火葬のみ。</p>
+  </div>
+
+  <div class="field">
+    <div class="fl"><label for="km">2. お迎え先からの距離</label><output id="kmOut">20km</output></div>
+    <input id="km" type="range" min="0" max="80" step="5" value="20" aria-label="お迎え先から安置先・斎場までのおおよその距離（km）">
+    <p class="help">病院・ご自宅・施設から、ご安置先や斎場までの<b>おおよその距離</b>です。わからなければ、お電話で住所をお伝えください。</p>
+  </div>
+
+  <div class="field">
+    <div class="fl"><span>3. お迎えをお願いする時間帯</span></div>
+    <div class="seg two" id="segTime" role="group" aria-label="お迎えの時間帯">
+      <button type="button" data-v="day" aria-pressed="true">日中<br><small>8時〜20時</small></button>
+      <button type="button" data-v="night" aria-pressed="false">深夜・早朝<br><small>20時〜翌8時</small></button>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="fl"><label for="days">4. 火葬までお待ちいただく日数</label><output id="daysOut">4日</output></div>
+    <input id="days" type="range" min="1" max="7" step="1" value="4" aria-label="火葬までお待ちいただく日数">
+    <p class="help">初期表示の4日は計算例です。実際の待ち日数を示すものではありません。</p>
+  </div>
+
+  <div class="field">
+    <div class="fl"><span>5. 火葬場のご利用区分</span></div>
+    <div class="seg" id="segCity" role="group" aria-label="火葬場のご利用区分">
+      <button type="button" data-v="kawasaki" aria-pressed="true">川崎市民</button>
+      <button type="button" data-v="yokohama" aria-pressed="false">横浜市民</button>
+      <button type="button" data-v="other" aria-pressed="false">市外の方</button>
+    </div>
+  </div>
+
+  <div class="field" id="fPeople" hidden>
+    <div class="fl"><label for="people">6. 参列される人数</label><output id="peopleOut">10人</output></div>
+    <input id="people" type="range" min="5" max="50" step="5" value="10" aria-label="参列される人数">
+    <p class="help">ご家族・ご親族を含む人数の目安です。式場の広さと、お食事・返礼品の数に使います。</p>
+  </div>
+
+  <div class="field">
+    <div class="fl"><span id="optNo">ご希望があれば</span></div>
+    <div class="opts" id="opts"></div>
+  </div>
+</div>
+
+<div class="result" aria-live="polite">
+  <span class="lb" id="resLabel">総額の目安（税込）【仮】</span>
+  <span class="val" id="resVal">約 ○〜○万円</span>
+  <span class="sm">※正式なお見積りは、内訳を明記してお出しします</span>
+</div>
+
+<div class="card">
+  <p class="note" style="margin:0 0 6px"><span class="kari">仮</span>この表の金額は、すべて仮の数字です。</p>
+  <table id="brk"><tbody></tbody></table>
+  <p class="note" style="margin-top:12px">上記は<b>目安の金額</b>です。実際のお費用は、式場の空き状況・ご希望の内容・宗教者への謝礼などにより変わります。宗教者へのお礼（お布施）は、お寺・宗教者に直接お渡しするもので、上記に含まれません。</p>
+</div>
+
+<div class="card cb" id="callback">
+  <h2>この内容で、内訳つきのお見積りを折り返しします</h2>
+  <p class="note">お電話が重いと感じる方は、こちらからどうぞ。お名前と電話番号だけで申し込めます。</p>
+  <div class="sum-box" id="sumBox"></div>
+  <form id="cbForm" novalidate>
+    <label class="t" for="cbName">お名前 <span class="pill">必須</span></label>
+    <input class="in" id="cbName" autocomplete="name" placeholder="例：山田 花子">
+    <label class="t" for="cbTel">お電話番号 <span class="pill">必須</span></label>
+    <input class="in" id="cbTel" type="tel" inputmode="tel" autocomplete="tel" placeholder="例：090-1234-5678">
+    <label class="t" for="cbTime">つながりやすい時間帯 <span class="pill" style="border-color:var(--sub);color:var(--sub)">任意</span></label>
+    <select class="in" id="cbTime"><option>いつでもよい</option><option>午前</option><option>午後</option><option>夜</option></select>
+    <button class="btn" type="submit">折り返しを申し込む<span class="nb">（無料）</span></button>
+    <p class="note" style="margin-top:10px"><span class="kari">仮</span>折り返しのお電話は、お見積りのご案内のためだけです。しつこい営業のお電話はしません。【True Heart さんと要確認】</p>
+    <div class="msg" id="cbMsg"></div>
+  </form>
+  <a class="btn sub" href="tel:0120264167"><span class="l1">お急ぎの方は、お電話ください</span><span class="l2">☎ 0120-264-167</span><span class="l3">通話無料・24時間365日</span></a>
+</div>
+
+<p class="note">試作　2026-11-08｜家族葬光（運営：株式会社ランバード／ご葬儀の施行：株式会社True Heart）｜noindex・広告には使いません</p>
+</div>
+
+<nav class="fixed" aria-label="ご相談">
+  <a class="tel" href="tel:0120264167"><small>通話無料・24時間365日</small>☎ 0120-264-167</a>
+  <a class="cb-link" href="#callback"><small>お電話が重いときは</small>折り返しを申し込む</a>
+</nav>
+
+<script>
+/* ★すべて仮の数字（試作）。True Heart の確定値が来たらここだけ差し替える。
+   依頼文の質問 7〜13 と対応：
+   INCLUDED_KM/OVER=7,8 / NIGHT=8 / STAY=9 / CITY・HALL=10 / MEAL・GIFT=11 / OPTION=12 */
+var PRICE = { kasou:165000, ichinichi:385000, kazoku:495000 };        /* LPと同じ */
+var LABEL = { kasou:"火葬式", ichinichi:"一日葬", kazoku:"家族葬" };
+var PLAN_HELP = {
+  kasou:"通夜・告別式なし、火葬のみ。",
+  ichinichi:"通夜なし。告別式と火葬を1日で行います。",
+  kazoku:"通夜・告別式を、ご家族・ご親族中心で行います。"
+};
+var INCLUDED_KM = 20, OVER_STEP_KM = 10, OVER_PER_STEP = 5500;      /* 仮 */
+var NIGHT_SURCHARGE = 11000;                                         /* 仮 */
+var STAY_PER_DAY = 20000, INCLUDED_DAYS = 1;                         /* 既存LPと同じ（要確認） */
+var CITY = { kawasaki:0, yokohama:12000, other:50000 };              /* 既存LPと同じ（要確認） */
+var HALL = [ [10,50000], [20,80000], [30,120000], [50,180000] ];     /* 仮：人数→式場使用料（火葬式は0） */
+var MEAL_PER = 4000, GIFT_PER = 1500;                                /* 仮：1人あたり */
+var OPTION = {
+  flower: { name:"お花を増やす（祭壇まわり）", price:30000 },
+  photo:  { name:"遺影写真", price:20000 },
+  yukan:  { name:"湯灌（ゆかん）", price:80000 },
+  meal:   { name:"お食事（参列人数ぶん）", per:MEAL_PER, needPeople:true },
+  gift:   { name:"返礼品（参列人数ぶん）", per:GIFT_PER, needPeople:true }
+};
+var RANGE_LOW = 0.95, RANGE_HIGH = 1.15;                              /* 試算幅。保証範囲ではない */
+
+var S = { plan:"kasou", time:"day", city:"kawasaki", km:20, days:4, people:10, opt:{} };
+var $ = function(id){ return document.getElementById(id); };
+function yen(n){ return n.toLocaleString("ja-JP") + "円"; }
+function man(n){ return (Math.round(n/1000)/10).toFixed(1).replace(/\.0$/,"") + "万円"; }
+function hallFee(p){ for (var i=0;i<HALL.length;i++){ if (p<=HALL[i][0]) return HALL[i][1]; } return HALL[HALL.length-1][1]; }
+
+function buildOpts(){
+  var box = $("opts"), h = "";
+  Object.keys(OPTION).forEach(function(k){
+    var o = OPTION[k];
+    var hint = o.per ? "1人 " + yen(o.per) : yen(o.price);
+    h += '<label data-k="'+k+'"'+(o.needPeople?' data-np="1"':'')+'><input type="checkbox" value="'+k+'"><span class="nm">'+o.name+'<small>'+hint+'（仮）</small></span></label>';
+  });
+  box.innerHTML = h;
+}
+
+function calc(){
+  var rows = [], total = 0;
+  var base = PRICE[S.plan];
+  var hasHall = S.plan !== "kasou";
+  var over = Math.max(0, S.km - INCLUDED_KM);
+  var overSteps = Math.ceil(over / OVER_STEP_KM);
+  var extraDays = Math.max(0, S.days - INCLUDED_DAYS);
+  var items = [
+    { g:"in",  n:LABEL[S.plan]+"の基本料金", sub:"お迎え（"+INCLUDED_KM+"kmまで）・ご安置"+INCLUDED_DAYS+"日分・お棺・仏衣・骨壺など", v:base, always:true },
+    { g:"out", n:"ご安置・ドライアイスの延長（"+extraDays+"日分）", v:extraDays*STAY_PER_DAY, always:true },
+    { g:"out", n:"お迎えの距離超過（"+(over>0?over+"km超":"規定内")+"）", v:overSteps*OVER_PER_STEP },
+    { g:"out", n:"深夜・早朝の割増", v:S.time==="night"?NIGHT_SURCHARGE:0 },
+    { g:"out", n:"火葬場の使用料・火葬料", v:CITY[S.city], always:true },
+    { g:"out", n:"式場の使用料（"+S.people+"人規模）", v:hasHall?hallFee(S.people):0, hide:!hasHall }
+  ];
+  Object.keys(OPTION).forEach(function(k){
+    var o = OPTION[k]; if (!S.opt[k]) return;
+    if (o.needPeople && !hasHall) return;
+    items.push({ g:"out", n:o.name.replace("（参列人数ぶん）","（"+S.people+"人）"), v:o.per?o.per*S.people:o.price });
+  });
+  items.forEach(function(it){ if (!it.hide){ rows.push(it); total += it.v; } });
+  return { rows:rows, total:total, hasHall:hasHall };
+}
+
+function render(){
+  var hasHall = S.plan !== "kasou";
+  $("fPeople").hidden = !hasHall;
+  Array.prototype.forEach.call($("opts").children, function(l){
+    var np = l.getAttribute("data-np");
+    l.style.display = (np && !hasHall) ? "none" : "";
+    var cb = l.querySelector("input"); l.classList.toggle("on", cb.checked);
+  });
+  $("planHelp").textContent = PLAN_HELP[S.plan];
+  $("kmOut").textContent = S.km + "km";
+  $("daysOut").textContent = S.days + "日";
+  $("peopleOut").textContent = S.people + "人";
+  $("optNo").textContent = (hasHall ? "7. " : "6. ") + "ご希望があれば";
+
+  var c = calc();
+  $("resVal").innerHTML = "<span class=\"nb\">約 " + man(c.total*RANGE_LOW) + "〜</span> <span class=\"nb\">" + man(c.total*RANGE_HIGH) + "</span>";
+  $("resLabel").textContent = "総額の目安（" + LABEL[S.plan] + "・税込）【仮】";
+
+  var h = '<tr class="grp"><th colspan="2">基本料金に含まれるもの</th></tr>';
+  var outHead = false;
+  c.rows.forEach(function(it){
+    if (it.g==="out" && !outHead){ h += '<tr class="grp out"><th colspan="2">別途かかるもの（ご希望・状況で変わる）</th></tr>'; outHead = true; }
+    h += '<tr'+(it.v===0?' class="zero"':'')+'><th>'+it.n+(it.sub?'<br><span class="note">'+it.sub+'</span>':'')+'</th><td>'+(it.v===0?"なし":yen(it.v))+'</td></tr>';
+  });
+  h += '<tr class="sum"><th>合計の目安</th><td>'+yen(c.total)+'</td></tr>';
+  h += '<tr><td colspan="2" class="note" style="text-align:left;white-space:normal;border:0">緑の帯の金額は、この合計に、−5%〜＋15%の幅をつけたものです。</td></tr>';
+  $("brk").querySelector("tbody").innerHTML = h;
+
+  var sel = Object.keys(OPTION).filter(function(k){ return S.opt[k] && !(OPTION[k].needPeople && !hasHall); }).map(function(k){ return OPTION[k].name.replace("（参列人数ぶん）","").replace("（祭壇まわり）",""); });
+  $("sumBox").innerHTML = "<b>お申し込みの内容（自動で入ります）</b><br>" +
+    LABEL[S.plan] + "／お迎え距離 約" + S.km + "km／" + (S.time==="night"?"深夜・早朝":"日中") + "／待ち" + S.days + "日／" +
+    ({kawasaki:"川崎市民",yokohama:"横浜市民",other:"市外"})[S.city] + (hasHall?"／参列"+S.people+"人":"") +
+    (sel.length?"／"+sel.join("・"):"") + "<br>総額の目安：" + $("resVal").textContent;
+}
+
+function seg(id,key){
+  var box = $(id);
+  box.addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (!b) return;
+    Array.prototype.forEach.call(box.querySelectorAll("button"), function(x){ x.setAttribute("aria-pressed", String(x===b)); });
+    S[key] = b.getAttribute("data-v"); render();
+  });
+}
+seg("segPlan","plan"); seg("segTime","time"); seg("segCity","city");
+[["km","km"],["days","days"],["people","people"]].forEach(function(p){
+  $(p[0]).addEventListener("input", function(e){ S[p[1]] = parseInt(e.target.value,10); render(); });
+});
+buildOpts();
+$("opts").addEventListener("change", function(e){ S.opt[e.target.value] = e.target.checked; render(); });
+
+$("cbForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var n = $("cbName").value.trim(), t = $("cbTel").value.replace(/[^0-9]/g,"");
+  var m = $("cbMsg"); m.style.display = "block";
+  if (!n || t.length < 10){ m.textContent = "お名前と、お電話番号（10桁以上）を入れてください。"; return; }
+  m.innerHTML = "<span class='kari'>試作</span><b>試作のため、何も送られていません。</b><br>本番では、ここで送信し、「折り返しのご連絡をお待ちください」と表示します。";
+});
+render();
+</script>
+</body>
+</html>
