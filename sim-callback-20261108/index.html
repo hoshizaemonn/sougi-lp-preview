@@ -67,11 +67,25 @@ label.t{font-weight:700;font-size:15px}
 a.btn{display:block;padding:12px 8px}
 .msg{background:var(--hole);border:2px dashed var(--warn);border-radius:12px;padding:12px;margin-top:12px;font-size:14px;display:none}
 .pill{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:99px;padding:1px 10px;font-size:12px;font-weight:700;margin:2px 4px 2px 0}
-.fixed{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));z-index:5}
-.fixed a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;border-radius:12px;text-decoration:none;font-weight:800;line-height:1.3;font-size:15px}
+.fixed{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));z-index:5}
+.fixed a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;border-radius:12px;text-decoration:none;font-weight:800;line-height:1.3;font-size:14px;text-align:center}
 .fixed small{font-size:12px;font-weight:600}
 .fixed .tel{background:var(--accent);color:#fff}
 .fixed .cb-link{border:2px solid var(--accent);color:var(--accent)}
+.sheetbox{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0;background:var(--card)}
+.sheetbox h3{margin:0 0 4px;font-size:16px;color:var(--accent)}
+.sheetbox ul{margin:6px 0 0;padding-left:1.3em;font-size:14px}
+.sheetbox li{margin:2px 0}
+.mini{font-size:13px}
+.mini th,.mini td{padding:6px 5px}
+.mini td.hole{background:var(--hole);color:var(--sub)}
+details.pv{margin:10px 0}
+details.pv summary{cursor:pointer;font-weight:700;color:var(--accent);padding:8px 0;min-height:44px}
+.chk{display:grid;gap:8px;margin:8px 0 12px}
+.chk label{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;line-height:1.5}
+.chk input{width:22px;height:22px;accent-color:var(--accent);flex:none;margin-top:2px}
+.chk label.on{border-color:var(--accent);background:var(--soft)}
+.chk small{display:block;color:var(--sub)}
 </style>
 </head>
 <body>
@@ -166,12 +180,68 @@ a.btn{display:block;padding:12px 8px}
   <a class="btn sub" href="tel:0120264167"><span class="l1">お急ぎの方は、お電話ください</span><span class="l2">☎ 0120-264-167</span><span class="l3">通話無料・24時間365日</span></a>
 </div>
 
+<div class="card cb" id="shiryo">
+  <h2>初めての方へ：資料を無料でお送りします</h2>
+  <p class="note"><span class="kari">試作</span>お葬式がはじめてでも、順番がわかる資料です。A4・1枚ずつ（PDF）で、メールでお送りします。</p>
+  <div class="sheetbox">
+    <h3>① 亡くなってから火葬まで 最初の3日のチェックリスト</h3>
+    <p class="note" style="margin:0">いつ・何を・誰に連絡するかを、順番にチェックできる1枚です。</p>
+    <ul><li>病院や自宅で亡くなった直後の、最初の数時間にすること</li><li>死亡診断書、死亡届、火葬許可証の流れ</li><li>ここで費用が増えやすいところ（安置の日数など）</li></ul>
+  </div>
+  <div class="sheetbox">
+    <h3>② 家族葬の見積り例（参列10名・20名）</h3>
+    <p class="note" style="margin:0">「基本料金に含まれるもの」と「別途かかるもの」を、分けて載せた見積り例です。</p>
+    <ul><li>お迎え・安置・お棺など、含まれるものの一覧</li><li>搬送の距離超過や安置の延長など、別途かかるもの</li><li>総額の目安（人数ごと）</li></ul>
+  </div>
+  <details class="pv">
+    <summary>資料の中身を見る（見本）</summary>
+    <div class="sheetbox">
+      <h3>①のチェックリスト（見本）</h3>
+      <p class="mini"><b>1. まず（亡くなった直後〜数時間）</b><br>☐ 病院・施設のスタッフの案内を聞く（数時間のうちに、ご遺体を移す先が必要になります）<br>☐ お迎えとご安置の場所を決める（葬儀社が決まっていなくても、まず電話で相談できます）<br>☐ 家族・親族に連絡する</p>
+      <p class="mini"><b>2. 当日〜翌日</b><br>☐ 医師から死亡診断書を受け取る（コピーを数枚とっておく）<br>☐ 葬儀の形をざっくり決める（火葬式・一日葬・家族葬）<br>☐ 菩提寺があるか確認する</p>
+      <p class="mini"><b>3. 2〜3日目</b><br>☐ 死亡届を出す（亡くなったことを知った日から7日以内）<br>☐ 火葬許可証を受け取る（亡くなってから24時間たたないと火葬できません）<br>☐ 見積りの内訳を、紙で出してもらう</p>
+      <p class="note">※実際の資料は、これに「葬儀のあと」の手続きの欄もつきます。</p>
+    </div>
+    <div class="sheetbox">
+      <h3>②の見積り例（見本・金額は空欄）</h3>
+      <div class="scroll" style="overflow-x:auto"><table class="mini">
+        <thead><tr><th></th><th>10名</th><th>20名</th></tr></thead>
+        <tbody>
+          <tr class="grp"><th colspan="3">基本料金に含まれるもの</th></tr>
+          <tr><td>お迎え・安置・お棺など</td><td>含む</td><td>含む</td></tr>
+          <tr><td><b>基本料金</b></td><td class="hole">【　　】円</td><td class="hole">【　　】円</td></tr>
+          <tr class="grp out"><th colspan="3" style="background:var(--hole);color:var(--warn)">別途かかるもの</th></tr>
+          <tr><td>安置の延長（1日ごと）</td><td class="hole">【　　】円</td><td class="hole">同左</td></tr>
+          <tr><td>搬送の距離超過</td><td class="hole">【　　】円</td><td class="hole">同左</td></tr>
+          <tr><td>火葬料金・式場使用料</td><td class="hole">【　　】円</td><td class="hole">【　　】円</td></tr>
+          <tr class="sum"><th>総額の目安</th><td class="hole">【　　】円</td><td class="hole">【　　】円</td></tr>
+        </tbody></table></div>
+      <p class="note">※金額は、確定したものだけを載せます（いまは空欄の見本です）。</p>
+    </div>
+  </details>
+  <form id="srForm" novalidate>
+    <p class="fl" style="margin:12px 0 4px"><span>受け取る資料</span></p>
+    <div class="chk" id="srChk">
+      <label class="on"><input type="checkbox" value="1" checked><span><b>① チェックリスト</b><small>亡くなってから火葬まで</small></span></label>
+      <label class="on"><input type="checkbox" value="2" checked><span><b>② 見積り例</b><small>参列10名・20名</small></span></label>
+    </div>
+    <label class="t" for="srMail">メールアドレス <span class="pill">必須</span></label>
+    <input class="in" id="srMail" type="email" inputmode="email" autocomplete="email" placeholder="例：example@mail.com">
+    <label class="t" for="srName">お名前 <span class="pill" style="border-color:var(--sub);color:var(--sub)">任意</span></label>
+    <input class="in" id="srName" autocomplete="name" placeholder="例：山田 花子">
+    <button class="btn" type="submit">資料を請求する<span class="nb">（無料）</span></button>
+    <p class="note" style="margin-top:10px"><span class="kari">仮</span>しつこい営業のお電話はしません。【True Heart さんと要確認】　資料は、確認が終わったものからお送りします。</p>
+    <div class="msg" id="srMsg"></div>
+  </form>
+</div>
+
 <p class="note">試作　2026-11-08｜家族葬光（運営：株式会社ランバード／ご葬儀の施行：株式会社True Heart）｜noindex・広告には使いません</p>
 </div>
 
 <nav class="fixed" aria-label="ご相談">
-  <a class="tel" href="tel:0120264167"><small>通話無料・24時間365日</small>☎ 0120-264-167</a>
-  <a class="cb-link" href="#callback"><small>お電話が重いときは</small>折り返しを申し込む</a>
+  <a class="tel" href="tel:0120264167"><small>通話無料・24時間</small>☎ 0120-264-167</a>
+  <a class="cb-link" href="#callback"><small>電話が重いとき</small>折り返し</a>
+  <a class="cb-link" href="#shiryo"><small>無料</small>資料請求</a>
 </nav>
 
 <script>
@@ -296,6 +366,16 @@ $("cbForm").addEventListener("submit", function(e){
   var m = $("cbMsg"); m.style.display = "block";
   if (!n || t.length < 10){ m.textContent = "お名前と、お電話番号（10桁以上）を入れてください。"; return; }
   m.innerHTML = "<span class='kari'>試作</span><b>試作のため、何も送られていません。</b><br>本番では、ここで送信し、「折り返しのご連絡をお待ちください」と表示します。";
+});
+$("srChk").addEventListener("change", function(e){ e.target.closest("label").classList.toggle("on", e.target.checked); });
+$("srForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var m = $("srMsg"); m.style.display = "block";
+  var n = $("srChk").querySelectorAll("input:checked").length;
+  var ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($("srMail").value.trim());
+  if (!n){ m.textContent = "受け取る資料を、1つ以上選んでください。"; return; }
+  if (!ok){ m.textContent = "メールアドレスを入れてください。"; return; }
+  m.innerHTML = "<span class='kari'>試作</span><b>試作のため、何も送られていません。</b><br>本番では、ここで送信し、「資料をお送りしました」と表示します。";
 });
 render();
 </script>
