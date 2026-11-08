@@ -77,6 +77,15 @@ a.btn{display:block;padding:12px 8px}
 .sheetbox ul{margin:6px 0 0;padding-left:1.3em;font-size:14px}
 .sheetbox li{margin:2px 0}
 .mini{font-size:13px}
+table.mini{table-layout:fixed}
+table.mini th:first-child,table.mini td:first-child{width:38%}
+table.mini td{white-space:normal;padding:6px 3px;text-align:center;font-size:12.5px}
+table.mini td:first-child{text-align:left;font-size:13px;padding-left:6px}
+.pv .sheetbox{padding:10px 10px}
+ul.cl{list-style:none;padding:0;margin:4px 0 8px}
+ul.cl li{position:relative;padding-left:1.2em;margin:3px 0;font-size:14px;line-height:1.65}
+ul.cl li:before{content:"・";position:absolute;left:0}
+.cl-h{font-weight:700;margin:10px 0 0;font-size:14px}
 .mini th,.mini td{padding:6px 5px}
 .mini td.hole{background:var(--hole);color:var(--sub)}
 details.pv{margin:10px 0}
@@ -98,6 +107,7 @@ details.pv summary{cursor:pointer;font-weight:700;color:var(--accent);padding:8p
 <h1>葬儀の総額の目安を、その場で計算</h1>
 <p class="lead">お選びいただくと、下の金額が変わります。<br>お見積りの内訳も、その場でご覧いただけます。</p>
 
+<div id="simArea">
 <div class="card" id="inputs">
   <div class="field">
     <div class="fl"><span>1. ご葬儀のかたち</span></div>
@@ -162,6 +172,8 @@ details.pv summary{cursor:pointer;font-weight:700;color:var(--accent);padding:8p
   <p class="note" style="margin-top:12px">上記は<b>目安の金額</b>です。実際のお費用は、式場の空き状況・ご希望の内容・宗教者への謝礼などにより変わります。宗教者へのお礼（お布施）は、お寺・宗教者に直接お渡しするもので、上記に含まれません。</p>
 </div>
 
+</div>
+
 <div class="card cb" id="callback">
   <h2>この内容で、内訳つきのお見積りを折り返しします</h2>
   <p class="note">お電話が重いと感じる方は、こちらからどうぞ。お名前と電話番号だけで申し込めます。</p>
@@ -174,7 +186,7 @@ details.pv summary{cursor:pointer;font-weight:700;color:var(--accent);padding:8p
     <label class="t" for="cbTime">つながりやすい時間帯 <span class="pill" style="border-color:var(--sub);color:var(--sub)">任意</span></label>
     <select class="in" id="cbTime"><option>いつでもよい</option><option>午前</option><option>午後</option><option>夜</option></select>
     <button class="btn" type="submit">折り返しを申し込む<span class="nb">（無料）</span></button>
-    <p class="note" style="margin-top:10px"><span class="kari">仮</span>折り返しのお電話は、お見積りのご案内のためだけです。しつこい営業のお電話はしません。【True Heart さんと要確認】</p>
+    <p class="note" style="margin-top:10px"><span class="kari">仮</span>折り返しのお電話は、お見積りのご案内のためだけです。しつこい営業のお電話はしません【確認中】。</p>
     <div class="msg" id="cbMsg"></div>
   </form>
   <a class="btn sub" href="tel:0120264167"><span class="l1">お急ぎの方は、お電話ください</span><span class="l2">☎ 0120-264-167</span><span class="l3">通話無料・24時間365日</span></a>
@@ -197,14 +209,17 @@ details.pv summary{cursor:pointer;font-weight:700;color:var(--accent);padding:8p
     <summary>資料の中身を見る（見本）</summary>
     <div class="sheetbox">
       <h3>①のチェックリスト（見本）</h3>
-      <p class="mini"><b>1. まず（亡くなった直後〜数時間）</b><br>☐ 病院・施設のスタッフの案内を聞く（数時間のうちに、ご遺体を移す先が必要になります）<br>☐ お迎えとご安置の場所を決める（葬儀社が決まっていなくても、まず電話で相談できます）<br>☐ 家族・親族に連絡する</p>
-      <p class="mini"><b>2. 当日〜翌日</b><br>☐ 医師から死亡診断書を受け取る（コピーを数枚とっておく）<br>☐ 葬儀の形をざっくり決める（火葬式・一日葬・家族葬）<br>☐ 菩提寺があるか確認する</p>
-      <p class="mini"><b>3. 2〜3日目</b><br>☐ 死亡届を出す（亡くなったことを知った日から7日以内）<br>☐ 火葬許可証を受け取る（亡くなってから24時間たたないと火葬できません）<br>☐ 見積りの内訳を、紙で出してもらう</p>
-      <p class="note">※実際の資料は、これに「葬儀のあと」の手続きの欄もつきます。</p>
+      <p class="cl-h">1. まず（亡くなった直後〜数時間）</p>
+      <ul class="cl"><li>病院・施設の案内を聞く。数時間のうちに、ご遺体を移す先が必要になります</li><li>お迎えとご安置の場所を決める。葬儀社が未定でも、まず電話で相談できます</li></ul>
+      <p class="cl-h">2. 当日〜翌日</p>
+      <ul class="cl"><li>医師から死亡診断書を受け取る。コピーを数枚とっておく</li><li>葬儀の形をざっくり決める（火葬式・<span class="nb">一日葬</span>・家族葬）</li></ul>
+      <p class="cl-h">3. 2〜3日目</p>
+      <ul class="cl"><li>死亡届を出す（知った日から7日以内）</li><li>火葬許可証を受け取る。亡くなってから<span class="nb">24時間</span>たたないと火葬できません</li><li>見積りの内訳を、紙で出してもらう</li></ul>
+      <p class="note">※実際の資料には、「葬儀のあと」の手続きの欄もつきます。</p>
     </div>
     <div class="sheetbox">
       <h3>②の見積り例（見本・金額は空欄）</h3>
-      <div class="scroll" style="overflow-x:auto"><table class="mini">
+      <table class="mini">
         <thead><tr><th></th><th>10名</th><th>20名</th></tr></thead>
         <tbody>
           <tr class="grp"><th colspan="3">基本料金に含まれるもの</th></tr>
@@ -215,7 +230,7 @@ details.pv summary{cursor:pointer;font-weight:700;color:var(--accent);padding:8p
           <tr><td>搬送の距離超過</td><td class="hole">【　　】円</td><td class="hole">同左</td></tr>
           <tr><td>火葬料金・式場使用料</td><td class="hole">【　　】円</td><td class="hole">【　　】円</td></tr>
           <tr class="sum"><th>総額の目安</th><td class="hole">【　　】円</td><td class="hole">【　　】円</td></tr>
-        </tbody></table></div>
+        </tbody></table>
       <p class="note">※金額は、確定したものだけを載せます（いまは空欄の見本です）。</p>
     </div>
   </details>
@@ -229,9 +244,9 @@ details.pv summary{cursor:pointer;font-weight:700;color:var(--accent);padding:8p
     <input class="in" id="srMail" type="email" inputmode="email" autocomplete="email" placeholder="例：example@mail.com">
     <label class="t" for="srName">お名前 <span class="pill" style="border-color:var(--sub);color:var(--sub)">任意</span></label>
     <input class="in" id="srName" autocomplete="name" placeholder="例：山田 花子">
+    <div class="msg" id="srMsg" style="margin:0 0 10px"></div>
     <button class="btn" type="submit">資料を請求する<span class="nb">（無料）</span></button>
-    <p class="note" style="margin-top:10px"><span class="kari">仮</span>しつこい営業のお電話はしません。【True Heart さんと要確認】　資料は、確認が終わったものからお送りします。</p>
-    <div class="msg" id="srMsg"></div>
+    <p class="note" style="margin-top:10px"><span class="kari">仮</span>しつこい営業のお電話はしません【確認中】。資料は、確認が終わったものからお送りします。</p>
   </form>
 </div>
 
