@@ -1,0 +1,80 @@
+/* 資料請求（試作・2026-11-08）：True Heart さんに完成イメージを見せるための欄。送信はしない */
+.shiryo-link{display:flex;align-items:center;justify-content:center;gap:8px;margin:10px 16px 0;padding:12px 14px;min-height:48px;background:#fff;color:#1d5b4b;border:2px solid #1d5b4b;border-radius:8px;font:800 15px/1.4 "Noto Sans JP",sans-serif;text-decoration:none;text-align:center}
+.shiryo-link small{font-weight:600;font-size:12px;color:#6e675e}
+.impact-actions .shiryo-link{margin:0}
+.hd-shiryo{display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border:1.5px solid #1d5b4b;border-radius:6px;color:#1d5b4b;font:800 13px/1 "Noto Sans JP",sans-serif;text-decoration:none;background:#fff;white-space:nowrap}
+@media(max-width:560px){.hd-shiryo{display:none}}
+.shiryo4{padding:44px 0;background:#eaf2ee;font-family:"Noto Sans JP",sans-serif;color:#22201d}
+.shiryo4 *{box-sizing:border-box}
+.shiryo4-in{width:calc(100% - 32px);max-width:860px;margin:0 auto}
+.shiryo4 .kari{display:inline-block;background:#b3261e;color:#fff;border-radius:4px;padding:1px 7px;font-size:12px;font-weight:800;margin-right:6px}
+.shiryo4 .kicker{margin:0;text-align:center;color:#745c31;font-weight:800;font-size:14px}
+.shiryo4 h2{margin:6px 0 10px;text-align:center;font-size:clamp(22px,6vw,30px);line-height:1.5;font-weight:900}
+.shiryo4 .lead{text-align:center;margin:0 0 20px;line-height:1.8;font-size:15px}
+.shiryo4 .sheets{display:grid;gap:14px}
+@media(min-width:720px){.shiryo4 .sheets{grid-template-columns:1fr 1fr}}
+.shiryo4 .sheet{background:#fff;border:1px solid #ded8cc;border-radius:12px;padding:18px 16px}
+.shiryo4 .sheet .no{display:inline-block;background:#1d5b4b;color:#fff;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:800}
+.shiryo4 .sheet h3{margin:8px 0 6px;font-size:17px;line-height:1.55;font-weight:900;text-wrap:balance}
+.shiryo4 .sheet p{margin:0 0 8px;font-size:14px;line-height:1.75;color:#6e675e}
+.shiryo4 .sheet ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.8}
+.shiryo4 details{margin:14px 0;background:#fff;border:1px solid #ded8cc;border-radius:12px;padding:0 16px}
+.shiryo4 summary{cursor:pointer;min-height:48px;display:flex;align-items:center;font-weight:800;color:#1d5b4b}
+.shiryo4 .pvbox{padding:0 0 14px;font-size:14px;line-height:1.75}
+.shiryo4 .pvbox h4{margin:12px 0 4px;font-size:14px;color:#1d5b4b}
+.shiryo4 .pvbox ul{margin:0;padding-left:1.2em}
+.shiryo4 table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;margin-top:6px}
+.shiryo4 th,.shiryo4 td{border:1px solid #ded8cc;padding:6px 7px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.shiryo4 td.hole{background:#fff8e1;color:#6e675e}
+.shiryo4 tr.grp th{background:#1d5b4b;color:#fff}
+.shiryo4 tr.out th{background:#fff8e1;color:#b3261e}
+.shiryo4 form{background:#fff;border:2px solid #1d5b4b;border-radius:12px;padding:18px 16px}
+.shiryo4 form .fl{margin:0 0 6px;font-weight:800;font-size:14px}
+.shiryo4 .chk{display:grid;gap:8px;margin-bottom:12px}
+.shiryo4 .chk label{display:flex;gap:10px;align-items:flex-start;border:1.5px solid #ded8cc;border-radius:8px;padding:10px 12px;min-height:48px;cursor:pointer}
+.shiryo4 .chk input{width:22px;height:22px;margin-top:2px;accent-color:#1d5b4b;flex:none}
+.shiryo4 .chk small{display:block;color:#6e675e;font-size:12px}
+.shiryo4 .t{display:block;font-weight:800;font-size:14px;margin:10px 0 4px}
+.shiryo4 .pill{display:inline-block;border:1px solid #b9463a;color:#b9463a;border-radius:4px;font-size:11px;padding:0 6px;margin-left:4px}
+.shiryo4 .in{width:100%;min-height:48px;border:1.5px solid #bdb6a8;border-radius:8px;padding:10px 12px;font-size:16px;font-family:inherit}
+.shiryo4 .go{width:100%;margin-top:14px;min-height:56px;border:0;border-radius:8px;background:#b9463a;color:#fff;font:900 18px/1.4 "Noto Sans JP",sans-serif;box-shadow:0 4px #80372f;cursor:pointer}
+.shiryo4 .msg{min-height:0;margin-top:10px;font-size:14px;line-height:1.7;color:#1d5b4b;font-weight:700}
+.shiryo4 .msg.err{color:#b3261e}
+.shiryo4 .note{margin:10px 0 0;font-size:12.5px;line-height:1.7;color:#6e675e}
+.shiryo4 .nb{white-space:nowrap}
+.shiryo4{word-break:auto-phrase;line-break:strict;text-wrap:pretty}
+.shiryo4 h2,.shiryo4 h3{text-wrap:balance}
+.shiryo4 td,.shiryo4 th{overflow-wrap:normal;word-break:auto-phrase}
+.shiryo4 .pvbox h4:first-child{margin-top:0}
+.shiryo4 .kicker .kari{background:#fff;color:#b3261e}
+/* 本番LPベース用 */
+.sr-hero{display:grid;gap:2px;justify-items:center;text-align:center;margin:12px auto 0;max-width:640px;padding:12px 14px;background:#fff;border:2px solid #1d5b4b;border-radius:10px;color:#1d5b4b;text-decoration:none;font-family:"Noto Sans JP",sans-serif;word-break:auto-phrase}
+.sr-hero .sr-tag{background:#1d5b4b;color:#fff;border-radius:999px;padding:1px 12px;font-size:12px;font-weight:800}
+.sr-hero strong{font-size:18px;line-height:1.5;font-weight:900;color:#22201d}
+.sr-hero small{font-size:12px;line-height:1.6;color:#6e675e}
+.sr-hero b{font-size:15px;margin-top:2px}
+.plan-sr{display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0 0;min-height:52px;padding:8px;border:2px solid #1d5b4b;border-radius:8px;color:#1d5b4b;font:800 15px/1.4 "Noto Sans JP",sans-serif;text-decoration:none;background:#fff}
+.plan-sr small{font-size:11px;font-weight:600;color:#6e675e}
+.shiryo4 .agree{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:14px;min-height:44px}
+.shiryo4 .agree input{width:22px;height:22px;accent-color:#1d5b4b}
+.shiryo4 select.in{appearance:auto;background:#fff}
+.fixed-cta .f-consult{background:#fff;color:#1d5b4b;border:2px solid #1d5b4b}
+.fixed-cta .f-consult b{color:#1d5b4b}
+/* 本番LPベース用 */
+.sr-hero{display:grid;gap:2px;justify-items:center;text-align:center;margin:12px auto 0;max-width:640px;padding:12px 14px;background:#fff;border:2px solid #1d5b4b;border-radius:10px;color:#1d5b4b;text-decoration:none;font-family:"Noto Sans JP",sans-serif;word-break:auto-phrase}
+.sr-hero .sr-tag{background:#1d5b4b;color:#fff;border-radius:999px;padding:1px 12px;font-size:12px;font-weight:800}
+.sr-hero strong{font-size:18px;line-height:1.5;font-weight:900;color:#22201d}
+.sr-hero small{font-size:12px;line-height:1.6;color:#6e675e}
+.sr-hero b{font-size:15px;margin-top:2px}
+.plan-sr{display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0 0;min-height:52px;padding:8px;border:2px solid #1d5b4b;border-radius:8px;color:#1d5b4b;font:800 15px/1.4 "Noto Sans JP",sans-serif;text-decoration:none;background:#fff}
+.plan-sr small{font-size:11px;font-weight:600;color:#6e675e}
+.shiryo4 .agree{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:14px;min-height:44px}
+.shiryo4 .agree input{width:22px;height:22px;accent-color:#1d5b4b}
+.shiryo4 select.in{appearance:auto;background:#fff}
+.fixed-cta .f-consult{background:#fff;color:#1d5b4b;border:2px solid #1d5b4b}
+.fixed-cta .f-consult b{color:#1d5b4b}
+.price-card .plan-sr{margin:10px 20px 0}
+.price-card .plan-price{white-space:nowrap}
+.fixed-cta small{font-size:11px}
+.shiryo4 select.in{height:50px}
+.shiryo4 .agree{cursor:pointer}
