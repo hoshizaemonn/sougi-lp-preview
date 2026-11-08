@@ -9,6 +9,20 @@
 :root{--bg:#f6f4ef;--card:#fff;--ink:#222;--sub:#5d625f;--accent:#1d5b4b;--accent-d:#164a3c;--warn:#b3261e;--line:#d9d6cc;--hole:#fff8e1;--soft:#eef4f1}
 @media (prefers-color-scheme:dark){:root{--bg:#171a19;--card:#202523;--ink:#ecebe6;--sub:#a9aeaa;--accent:#7fc7b0;--accent-d:#9bd9c4;--warn:#ff8a80;--line:#3a413e;--hole:#3a3320;--soft:#1f2c27}}
 *{box-sizing:border-box}
+.lead,.help,.note,.card p,th,td,.sum-box{word-break:auto-phrase;text-wrap:pretty}
+th{font-size:14px}
+.nb{display:inline-block;white-space:nowrap}
+input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;height:44px;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:8px;background:var(--line);border-radius:4px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--accent);margin-top:-11px;border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.35)}
+input[type=range]::-moz-range-track{height:8px;background:var(--line);border-radius:4px}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--accent);border:3px solid #fff}
+.opts .nm{display:block;font-weight:700}
+.opts .nm small{display:block;color:var(--sub);font-weight:400;margin:0;font-size:13px;white-space:normal}
+tr.grp.out th{background:var(--hole);color:var(--warn)}
+.btn .l1,.btn .l3{display:block}
+.btn .l2{display:block;font-size:22px;white-space:nowrap;line-height:1.4}
+.btn .l3{font-size:13px;font-weight:600}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 -apple-system,"Hiragino Sans","Yu Gothic",sans-serif;-webkit-text-size-adjust:100%}
 .wrap{max-width:760px;margin:0 auto;padding:16px 16px 120px}
 .banner{background:var(--hole);border:2px dashed var(--warn);border-radius:12px;padding:12px 14px;margin:0 0 18px;font-size:14px}
@@ -27,15 +41,15 @@ h1{font-size:24px;line-height:1.4;margin:4px 0 8px;text-align:center}
 .seg.two{grid-template-columns:repeat(2,1fr)}
 .seg button{font:inherit;font-weight:700;min-height:48px;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:6px 4px;cursor:pointer;line-height:1.3}
 .seg button[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--accent)}
-input[type=range]{width:100%;height:36px;accent-color:var(--accent)}
+input[type=range]{width:100%}
 .opts{display:grid;gap:8px}
 .opts label{display:flex;align-items:center;gap:10px;min-height:48px;border:2px solid var(--line);border-radius:12px;padding:6px 12px;cursor:pointer}
 .opts input{width:22px;height:22px;accent-color:var(--accent);flex:none}
 .opts label.on{border-color:var(--accent);background:var(--soft)}
-.opts small{color:var(--sub);margin-left:auto;white-space:nowrap}
+
 .result{background:var(--accent);color:#fff;border-radius:16px;padding:16px;text-align:center;margin:0 0 16px;position:sticky;top:8px;z-index:3;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .result .lb{display:block;font-size:13px;opacity:.9}
-.result .val{display:block;font-size:30px;font-weight:800;line-height:1.3;letter-spacing:.02em}
+.result .val{display:block;font-size:28px;font-weight:800;line-height:1.3;letter-spacing:.02em}
 .result .sm{display:block;font-size:12px;opacity:.9}
 table{border-collapse:collapse;width:100%;font-size:15px}
 th,td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
@@ -50,12 +64,12 @@ tr.sum th,tr.sum td{border-top:2px solid var(--accent);font-weight:800}
 label.t{font-weight:700;font-size:15px}
 .btn{display:block;width:100%;font:inherit;font-weight:800;font-size:17px;min-height:56px;border:0;border-radius:14px;background:var(--accent);color:#fff;cursor:pointer;padding:10px}
 .btn.sub{background:transparent;color:var(--accent);border:2px solid var(--accent);margin-top:10px;text-decoration:none;text-align:center;line-height:1.5}
-a.btn{display:flex;align-items:center;justify-content:center}
+a.btn{display:block;padding:12px 8px}
 .msg{background:var(--hole);border:2px dashed var(--warn);border-radius:12px;padding:12px;margin-top:12px;font-size:14px;display:none}
 .pill{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:99px;padding:1px 10px;font-size:12px;font-weight:700;margin:2px 4px 2px 0}
 .fixed{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));z-index:5}
 .fixed a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;border-radius:12px;text-decoration:none;font-weight:800;line-height:1.3;font-size:15px}
-.fixed small{font-size:11px;font-weight:600}
+.fixed small{font-size:12px;font-weight:600}
 .fixed .tel{background:var(--accent);color:#fff}
 .fixed .cb-link{border:2px solid var(--accent);color:var(--accent)}
 </style>
@@ -123,12 +137,13 @@ a.btn{display:flex;align-items:center;justify-content:center}
 </div>
 
 <div class="result" aria-live="polite">
-  <span class="lb" id="resLabel">総額の目安（税込）</span>
+  <span class="lb" id="resLabel">総額の目安（税込）【仮】</span>
   <span class="val" id="resVal">約 ○〜○万円</span>
   <span class="sm">※正式なお見積りは、内訳を明記してお出しします</span>
 </div>
 
 <div class="card">
+  <p class="note" style="margin:0 0 6px"><span class="kari">仮</span>この表の金額は、すべて仮の数字です。</p>
   <table id="brk"><tbody></tbody></table>
   <p class="note" style="margin-top:12px">上記は<b>目安の金額</b>です。実際のお費用は、式場の空き状況・ご希望の内容・宗教者への謝礼などにより変わります。宗教者へのお礼（お布施）は、お寺・宗教者に直接お渡しするもので、上記に含まれません。</p>
 </div>
@@ -144,11 +159,11 @@ a.btn{display:flex;align-items:center;justify-content:center}
     <input class="in" id="cbTel" type="tel" inputmode="tel" autocomplete="tel" placeholder="例：090-1234-5678">
     <label class="t" for="cbTime">つながりやすい時間帯 <span class="pill" style="border-color:var(--sub);color:var(--sub)">任意</span></label>
     <select class="in" id="cbTime"><option>いつでもよい</option><option>午前</option><option>午後</option><option>夜</option></select>
-    <button class="btn" type="submit">この内容で折り返しを申し込む（無料）</button>
+    <button class="btn" type="submit">折り返しを申し込む<span class="nb">（無料）</span></button>
     <p class="note" style="margin-top:10px"><span class="kari">仮</span>折り返しのお電話は、お見積りのご案内のためだけです。しつこい営業のお電話はしません。【True Heart さんと要確認】</p>
     <div class="msg" id="cbMsg"></div>
   </form>
-  <a class="btn sub" href="tel:0120264167">お急ぎの方は、お電話ください<br><span style="font-size:20px">0120-264-167</span>（通話無料・24時間365日）</a>
+  <a class="btn sub" href="tel:0120264167"><span class="l1">お急ぎの方は、お電話ください</span><span class="l2">☎ 0120-264-167</span><span class="l3">通話無料・24時間365日</span></a>
 </div>
 
 <p class="note">試作　2026-11-08｜家族葬光（運営：株式会社ランバード／ご葬儀の施行：株式会社True Heart）｜noindex・広告には使いません</p>
@@ -196,7 +211,7 @@ function buildOpts(){
   Object.keys(OPTION).forEach(function(k){
     var o = OPTION[k];
     var hint = o.per ? "1人 " + yen(o.per) : yen(o.price);
-    h += '<label data-k="'+k+'"'+(o.needPeople?' data-np="1"':'')+'><input type="checkbox" value="'+k+'"><span>'+o.name+'</span><small>'+hint+'（仮）</small></label>';
+    h += '<label data-k="'+k+'"'+(o.needPeople?' data-np="1"':'')+'><input type="checkbox" value="'+k+'"><span class="nm">'+o.name+'<small>'+hint+'（仮）</small></span></label>';
   });
   box.innerHTML = h;
 }
@@ -240,16 +255,17 @@ function render(){
   $("optNo").textContent = (hasHall ? "7. " : "6. ") + "ご希望があれば";
 
   var c = calc();
-  $("resVal").textContent = "約 " + man(c.total*RANGE_LOW) + "〜" + man(c.total*RANGE_HIGH);
-  $("resLabel").textContent = "総額の目安（" + LABEL[S.plan] + "・税込）";
+  $("resVal").innerHTML = "<span class=\"nb\">約 " + man(c.total*RANGE_LOW) + "〜</span> <span class=\"nb\">" + man(c.total*RANGE_HIGH) + "</span>";
+  $("resLabel").textContent = "総額の目安（" + LABEL[S.plan] + "・税込）【仮】";
 
   var h = '<tr class="grp"><th colspan="2">基本料金に含まれるもの</th></tr>';
   var outHead = false;
   c.rows.forEach(function(it){
-    if (it.g==="out" && !outHead){ h += '<tr class="grp"><th colspan="2">別途かかるもの</th></tr>'; outHead = true; }
+    if (it.g==="out" && !outHead){ h += '<tr class="grp out"><th colspan="2">別途かかるもの（ご希望・状況で変わる）</th></tr>'; outHead = true; }
     h += '<tr'+(it.v===0?' class="zero"':'')+'><th>'+it.n+(it.sub?'<br><span class="note">'+it.sub+'</span>':'')+'</th><td>'+(it.v===0?"なし":yen(it.v))+'</td></tr>';
   });
   h += '<tr class="sum"><th>合計の目安</th><td>'+yen(c.total)+'</td></tr>';
+  h += '<tr><td colspan="2" class="note" style="text-align:left;white-space:normal;border:0">緑の帯の金額は、この合計に、−5%〜＋15%の幅をつけたものです。</td></tr>';
   $("brk").querySelector("tbody").innerHTML = h;
 
   var sel = Object.keys(OPTION).filter(function(k){ return S.opt[k] && !(OPTION[k].needPeople && !hasHall); }).map(function(k){ return OPTION[k].name.replace("（参列人数ぶん）","").replace("（祭壇まわり）",""); });
