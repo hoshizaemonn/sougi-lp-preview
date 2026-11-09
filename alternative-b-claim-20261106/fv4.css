@@ -169,3 +169,12 @@ body .fv4b h2{font-size:min(5.2vw,26px);white-space:nowrap}
 .gv dl div{display:flex;flex-direction:column}.gv dt{font-size:10.5px;color:#625b52;font-weight:700}.gv dd{margin:0;font-size:13px;font-weight:900}
 .gv .gv-head{font-size:15px;font-weight:900;color:#245647;margin-bottom:4px}
 @media(min-width:860px){.tvs{grid-template-columns:repeat(3,1fr)}.gvs{grid-template-columns:1fr 1fr}}
+/* True Heart回答(2026-11-09)：時間は約束しない表現 */
+.m17-promise{margin:6px 0 0;font-size:13px;line-height:1.65;font-weight:800;color:#22201d;text-align:left}
+.m17-promise b{color:#b9463a;font-size:1.12em}
+.impact-promise{margin:8px 0 0;font-size:15px;line-height:1.7;font-weight:800}
+.impact-promise b{color:#b9463a}
+.nb{white-space:nowrap}
+.m17-promise b,.impact-promise b{color:#f3d9a4;text-shadow:0 1px 3px #0008}
+.sv-big b{font-size:clamp(20px,5.4vw,26px)}
+.fv4b .tv p{text-wrap:pretty;word-break:auto-phrase}
