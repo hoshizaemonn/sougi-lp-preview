@@ -75,3 +75,24 @@
 @media(min-width:768px){.em-d{margin-left:auto;margin-right:auto}}
 @media(max-width:767px){.m17-price{left:26px!important}}
 @media(max-width:767px){.m17-price{top:-4px!important}}
+/* 折り返し：文節で切る */
+.sec-lead,.price-card p,.comparison-toggle,.text-cta,.plan-details p{word-break:auto-phrase;text-wrap:pretty}
+.comparison-toggle{text-wrap:balance}
+/* 斎場カードの写真（本番の style.css と同じ） */
+
+
+/* v14: 斎場カードの写真 */
+.venue-art.has-photo{position:relative;padding:0;min-height:0;height:170px;overflow:hidden;background:#dfe9e4}
+
+.venue-art.has-photo>img{display:block;width:100%;height:100%;object-fit:cover}
+
+.venue-art.has-photo>span:not(.venue-number),.venue-art.has-photo>svg{display:none}
+
+.venue-art.has-photo .photo-credit{position:absolute;right:6px;bottom:6px;font-size:12px;line-height:1.5;color:#fff;background:rgba(24,48,41,.72);padding:1px 7px;border-radius:3px}
+
+.venue-art.has-photo .venue-number{z-index:2}
+@media(min-width:768px){.venue-art.has-photo{height:200px}}
+
+
+/* v14b */
+.venue-art.has-photo .photo-credit{color:#fff!important;font-size:12px!important;line-height:1.5!important;background:rgba(24,48,41,.82)!important;padding:2px 8px!important}
