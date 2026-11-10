@@ -1,0 +1,28 @@
+
+/* ===== 2026-11-10 追加：一体バッジ（供花）＋お客様の声 ===== */
+.v7-photo>.kz-emblem{position:absolute;top:8px;left:8px;width:clamp(138px,42vw,170px);z-index:3}
+.kz-emblem-svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 10px #0006)}
+@media(min-width:768px){.v7-photo>.kz-emblem{top:22px;left:28px;width:236px}}
+.kz-voices{background:#eaf2ee;padding:44px 0;font-family:"Noto Sans JP",sans-serif;color:#22201d}
+.kz-voices .nb{white-space:nowrap}
+.kz-v-kicker{margin:0;text-align:center;color:#745c31;font-weight:800;font-size:14px}
+.kz-v-h{margin:4px 0 14px;text-align:center;font-size:clamp(24px,6.6vw,32px);font-weight:900;line-height:1.4}
+.kz-v-score{display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;border:1px solid #ded8cc;border-radius:12px;padding:10px 16px;margin:0 auto 18px;width:max-content;max-width:100%}
+.kz-v-score>b{font:600 48px/1 Oswald,sans-serif;color:#c4a453}
+.kz-v-score small{display:block;font-size:12px;color:#6e675e;line-height:1.5}
+.kz-star{color:#e8a317;letter-spacing:.06em;font-size:15px;line-height:1.2}
+.kz-star.big{font-size:20px}
+.kz-v-cards{display:grid;gap:14px}
+@media(min-width:720px){.kz-v-cards{grid-template-columns:1fr 1fr}}
+.kz-vc{background:#fff;border:1px solid #ded8cc;border-radius:14px;padding:16px 16px 14px;box-shadow:0 3px 10px #0001;display:flex;flex-direction:column}
+.kz-vc-h{display:flex;align-items:center;gap:10px}
+.kz-vc-av{flex:none;width:44px;height:44px;border-radius:50%;background:#dfeae5;display:grid;place-items:center}
+.kz-vc-av svg{width:26px;height:26px;fill:#7da597}
+.kz-vc-h b{display:block;font-size:15px;line-height:1.4}
+.kz-vc-h small{display:block;font-size:12px;color:#6e675e;line-height:1.5}
+.kz-vc-h .kz-star{margin-left:auto;align-self:flex-start;padding-top:2px}
+.kz-vc-tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px}
+.kz-vc-tags span{background:#eaf2ee;color:#1d5b4b;border-radius:999px;padding:1px 10px;font-size:12px;font-weight:800;line-height:1.7}
+.kz-vc-q{margin:0 0 12px;font-size:15px;line-height:1.85;word-break:auto-phrase;text-wrap:pretty;flex:1}
+.kz-vc-src{align-self:flex-start;font-size:12.5px;font-weight:800;color:#1d5b4b;min-height:44px;display:flex;align-items:center}
+.kz-v-foot{margin:14px 0 0;text-align:center;font-size:12px;color:#6e675e;line-height:1.7}
